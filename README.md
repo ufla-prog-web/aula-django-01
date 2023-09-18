@@ -2,6 +2,9 @@
 
 <p align="center">
   <a href="#">
+    <img src="https://img.shields.io/badge/Aula-Introdução-brightgreen.svg" alt="Aula Introdução">
+  </a>
+  <a href="#">
     <img src="https://img.shields.io/badge/Python-blue.svg" alt="Python">
   </a>
   <a href="#">
