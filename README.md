@@ -2,9 +2,6 @@
 
 <p align="center">
   <a href="#">
-    <img src="https://img.shields.io/badge/Biblioteca-brightgreen.svg" alt="Biblioteca">
-  </a>
-  <a href="#">
     <img src="https://img.shields.io/badge/Python-blue.svg" alt="Python">
   </a>
   <a href="#">
