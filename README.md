@@ -1,4 +1,4 @@
-# Aula Django 01
+# Aula Django 01 - Visão Geral do Django
 
 <p align="center">
   <a href="#">
