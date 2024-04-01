@@ -2,138 +2,155 @@
 
 <p align="center">
   <a href="#">
-    <img src="https://img.shields.io/badge/Aula-Introdução-brightgreen.svg" alt="Aula Introdução">
+    <img src="https://img.shields.io/badge/Aula-Python-brightgreen.svg" alt="Aula Introdução">
   </a>
   <a href="#">
-    <img src="https://img.shields.io/badge/Python-blue.svg" alt="Python">
-  </a>
-  <a href="#">
-    <img src="https://img.shields.io/badge/Django-orange.svg" alt="Django">
+    <img src="https://img.shields.io/badge/Aula-Django-blue.svg" alt="Python">
   </a>
 </p>
 
-Este projeto mostra uma visão geral do framework Python Django. E foi baseado no conteúdo ensinado na aula de programação web utilizando como base a [documentação do django](https://docs.djangoproject.com/en/4.2/) e também o [curso de django da w3schools](https://www.w3schools.com/django/index.php).
+Este projeto mostra uma visão geral do framework Python Django. E foi baseado no conteúdo ensinado na aula de programação web utilizando como base a [documentação do django](https://docs.djangoproject.com/pt-br/5.0/) e também o [curso de django da w3schools](https://www.w3schools.com/django/index.php).
 
 ## Linguagens Utilizadas
 
-* Python - [link](https://www.python.org/)
-* HTML - [link](https://html.com/)
+* Python
+  * [link do site python](https://www.python.org/)
+  * [link do curso da w3schools](https://www.w3schools.com/python/default.asp)
+* HTML
+  * [link do curso da w3schools](https://www.w3schools.com/html/default.asp)
 
-## Framework Utilizados
+## Frameworks Utilizados
 
-* Django - [link](https://www.djangoproject.com/)
+* Django
+  * [link do site do django](https://www.djangoproject.com/)
+  * [link do curso da w3schools](https://www.w3schools.com/django/index.php)
+
+## Bibliotecas Utilizadas
+
+* Jinja - [link do site do jinja](https://jinja.palletsprojects.com/en/3.1.x/)
 
 ## Ferramentas Utilizadas
 
 * Visual Studio Code - [link](https://code.visualstudio.com/)
 * SQLite Online - [link](https://sqliteonline.com/)
 * Pip - [link](https://pypi.org/project/pip/)
-* VirtualEnv - [link](https://virtualenv.pypa.io/)
+* Venv - [link](https://docs.python.org/pt-br/3/library/venv.html)
 
-## Comandos utilizados na criação deste projeto
+## Desenvolvimento do Projeto
+
+Os passos a seguir devem ser seguidos para se ter uma visão geral do framework Django.
 
 ### Baixando o Repositório
 
 Inicilamente, baixe o repositório do [link](https://github.com/ufla-prog-web/aula-django-01) clicando em `Code` e `Download ZIP`.
 
-### Instalação do Python
+Ou então, clone o repositório através do comando abaixo:
+
+```bash
+git clone https://github.com/ufla-prog-web/aula-django-01.git
+```
+
+### Instalando o Python
 
 Se necessário, instale o Python (testado na versão 3.10.12) [link](https://www.python.org/downloads/).
 
 Verifique a versão instalada do Python (para ter certeza que tudo ocorreu bem):
 
 ```bash
-$ python3 --version
+python3 --version
 ```
 
-### Instalação do Pip
+### Instalando o Pip
 
 Se necessário, instale o pip (testado na versão 23.2.1):
 
 ```bash
-$ sudo apt install python3-pip
+sudo apt install python3-pip
 ```
 
 Verifique a versão instalada do pip (para ter certeza que tudo ocorreu bem):
 
 ```bash
-$ pip3 --version
+pip3 --version
 ```
 
-### Instalação do VirtualEnv
+### Instalando o Ambiente Virtual
 
-Se necessário, instale o virtualenv (testado na versão 20.24.1):
+Inicialmente, navegue no terminal até a pasta `aula-django-01` para realizar as instalações.
 
 ```bash
-$ pip3 install virtualenv
+cd aula-django-01
 ```
 
-Verifique a versão instalada do virtualenv (para ter certeza que tudo ocorreu bem):
+Instale o ambiente virtual (venv) para isolar as instalações/dependências do Python:
+
+Unix/macOS
 
 ```bash
-$ virtualenv --version
+python3 -m venv venv
 ```
 
-### Criação do Ambiente Virtual
-
-Crie o ambiente virtual para isolar as instalações Python:
+Windows
 
 ```bash
-$ virtualenv venv
+py -m venv venv
 ```
 
-**OBS:** no comando acima o nome `venv` é o nome que escolhemos para o nosso ambiente virtual (isso pode ser alterado).
+**OBS:** no comando acima, o segundo nome `venv` é o nome que escolhemos para o nosso ambiente virtual (isso pode ser alterado).
 
-Ativei o ambiente virtual para fazer as instalações de forma isolada:
+### Ativando o Ambiente Virtual
 
-**Sistema Operacional:** Unix/Mac OS:
+Ative o ambiente virtual (venv) no seu computador utilizando o comando abaixo:
+
+**Sistema Operacional:** Unix/macOS
 
 ```bash
-$ source venv/bin/activate
+source venv/bin/activate
 ```
 
 **Sistema Operacional:** Windows
 
 ```bash
-$ venv\Scripts\activate.bat
+Set-ExecutionPolicy Unrestricted -Scope Process
+.\venv\Scripts\activate.bat
 ```
 
 Quando desejar sair do ambiente virtual, basta digitar:
 
 ```bash
-(venv) ... $ deactivate
+deactivate
 ```
 
-### Instalação do Django
+### Instalando o Django
 
-Instale o django dentro do ambiente virtual criado (testado na versão 4.2.5):
+Instale o django dentro do ambiente virtual criado (testado na versão 5.0.3):
 
 ```bash
-(venv) ... $ pip3 install django
+pip3 install django
 ```
 
 Verifique a versão instalada do django (para ter certeza que tudo ocorreu bem):
 
 ```bash
-(venv) ... $ django-admin --version
+django-admin --version
 ```
 
-### Criação do Projeto Django
+### Criando o Projeto no Django
 
-Crie um projeto em django:
+Crie um projeto em django utilizando o comando abaixo:
 
 ```bash
-(venv) ... $ django-admin startproject mysite .
+django-admin startproject mysite .
 ```
 
 **OBS:** O ponto no comando acima informa ao Django para não criar uma pasta com nome `mysite` dentro de uma pasta `mysite`. Isso evita ter que ficar navegando entre pastas.
 
 ### Executando o Projeto
 
-Inicie a execução do projeto django criado:
+Inicie a execução do projeto django criado utilizando o comando abaixo:
 
 ```bash
-(venv) ... $ python3 manage.py runserver
+python3 manage.py runserver
 ```
 
 Acesse através do navegdor web a página [http://127.0.0.1:8000/](http://127.0.0.1:8000/). Uma página padrão do django deve aparecer.
@@ -143,13 +160,13 @@ Acesse através do navegdor web a página [http://127.0.0.1:8000/](http://127.0.
 Execute o comando abaixo para criar um aplicativo chamado `myapp` dentro do projeto `mysite`:
 
 ```bash
-(venv) ... $ python3 manage.py startapp myapp
+python3 manage.py startapp myapp
 ```
 
-O comando abaixo também faz a mesma coisa:
+O comando abaixo faz a mesma coisa:
 
 ```bash
-(venv) ... $ django-admin startapp myapp
+django-admin startapp myapp
 ```
 
 ### Criando a Primeira View no Django
@@ -164,7 +181,7 @@ def teste(request):
     return HttpResponse("Olá Mundo!")
 ```
 
-Em seguida, crie um arquivo nomeado `urls.py` na mesma pasta do arquivo `views.py` e digite este código nele:
+Em seguida, crie um arquivo nomeado `urls.py` na mesma pasta do arquivo `views.py` e digite o código abaixo:
 
 ```python
 from django.urls import path
@@ -190,7 +207,7 @@ urlpatterns = [
 Em seguida, execute o projeto django (veja se está tudo funcionando):
 
 ```bash
-(venv) ... $ python3 manage.py runserver
+python3 manage.py runserver
 ```
 
 OBS: deve aparecer uma mensagem de erro (Page not found) na página [http://127.0.0.1:8000](http://127.0.0.1:8000).
@@ -216,7 +233,7 @@ Abra o arquivo HTML e insira o seguinte:
 </html>
 ```
 
-Agora é necessário modificar a visualização. Abra o arquivo `views.py` e substitua o método de visualização `teste` por este:
+Agora, é necessário modificar a visualização. Abra o arquivo `views.py` e substitua o método de visualização `teste` por este:
 
 ```python
 from django.http import HttpResponse
@@ -227,7 +244,7 @@ def teste(request):
     return HttpResponse(template.render())
 ```
 
-Para poder trabalhar com coisas mais complicadas do que "Hello World!", temos que dizer ao Django que um novo aplicativo foi criado. Isso é feito no arquivo `settings.py` da pasta `mysite`. Procure a lista `INSTALLED_APPS[]` e adicione o aplicativo `myapp` que foi criado assim:
+Para poder trabalhar com coisas mais complicadas do que "Hello World!", temos que dizer ao Django que um novo aplicativo foi criado. Isso é feito no arquivo `settings.py` da pasta `mysite`. Procure a lista `INSTALLED_APPS[]` e adicione o aplicativo `myapp` que foi criado. Veja o exemplo abaixo:
 
 ```python
 INSTALLED_APPS = [
@@ -237,29 +254,31 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'myapp',  # inclua o app criado aqui
+    'myapp',                      # inclua o app criado aqui
 ]
 ```
 
 Em seguida, execute este comando:
 
 ```bash
-(venv) ... $ python3 manage.py migrate
+python3 manage.py migrate
 ```
+
+**OBS:** Este comando aplica as migrações, ou seja, atualiza o esquema do banco de dados de acordo com as mudanças nos modelos.
 
 Em seguida, execute o projeto django (veja se está tudo funcionando):
 
 ```bash
-(venv) ... $ python3 manage.py runserver
+python3 manage.py runserver
 ```
 
 Em seguida, acesse a URL [http://127.0.0.1:8000/teste/](http://127.0.0.1:8000/teste/`).
 
 ### Passando Parâmetros para o Template do Django
 
-Agora, iremos ver como podemos passar alguns parâmetros do Python para o template HTML utilizando tags do Django (através da biblioteca Jinja).
+Agora, iremos ver como podemos passar alguns parâmetros do Python para o template HTML utilizando tags do Django (através da biblioteca [Jinja](https://jinja.palletsprojects.com/en/3.1.x/)).
 
-Em seguida, edite o arquivo `views.py` na pasta `biblioteca` e coloque o seguinte conteúdo:
+Em seguida, edite o arquivo `views.py` na pasta `myapp` e coloque o seguinte conteúdo:
 
 ```python
 from django.http import HttpResponse
@@ -301,16 +320,16 @@ Em seguida, edite o arquivo HTML com nome `paginateste.html` na pasta `templates
 Em seguida, execute o projeto django:
 
 ```bash
-(venv) ... $ python3 manage.py runserver
+python3 manage.py runserver
 ```
 
 Em seguida, acesse a URL [http://127.0.0.1:8000/teste/](http://127.0.0.1:8000/teste/`).
 
-### Criando nosso Primeiro Modelo
+### Criando o Primeiro Modelo no Django
 
 Até esse momento fizemos a nossa aplicação web com interface, com URLs e algum processamento, mas não trabalhamos com Banco de Dados. Os dados estavam inseridos diretamente no código.
 
-Iremos agora criar o nosso primeiro modelo um Livro no Banco de Dados SQLite disponível no Django. No Django, os dados são criados em objetos, chamados Modelos, e na verdade são tabelas em um banco de dados.
+Agora, iremos criar o nosso primeiro modelo, um Livro no Banco de Dados SQLite disponível no Django. No Django, os dados são criados em objetos, chamados Modelos, que na verdade são tabelas em um banco de dados.
 
 Primeiramente, iremos criar uma classe chamada `Livro`. Para isso abra o arquivo `models.py` na pasta `myapp` e digite o seguinte conteúdo:
 
@@ -325,12 +344,12 @@ class Livro(models.Model):
 
 O código acima irá criar uma Tabela chamada Livro no BD SQLite. Os campos `nome` e `autor` são campos de texto e estão configurados para ter no máximo 255 caracteres. O campo `ano` é um campo numérico inteiro.
 
-OBS: Quando criamos o projeto Django, obtivemos um banco de dados SQLite vazio. Ele estava na raiz da pasta aula-django-01 e possui o nome de arquivo db.sqlite3. Por padrão, todos os modelos criados no projeto Django serão criados como tabelas neste banco de dados.
+OBS: Quando criamos o projeto Django, obtivemos um banco de dados SQLite vazio. Ele estava na raiz da pasta `aula-django-01` e possui o nome de arquivo `db.sqlite3`. Por padrão, todos os modelos criados no projeto Django serão criados como tabelas neste banco de dados.
 
 Em seguida, execute o código abaixo para que seja criado a tabela Livro no banco de dados de fato:
 
 ```bash
-(venv) ... $ python3 manage.py makemigrations myapp
+python3 manage.py makemigrations myapp
 ```
 
 O que resultará nesta saída:
@@ -348,7 +367,7 @@ A tabela ainda não foi criada, você terá que executar mais um comando, então
 Execute o comando de migração:
 
 ```bash
-(venv) ... $ python3 manage.py migrate
+python3 manage.py migrate
 ```
 
 O que resultará nesta saída:
@@ -360,14 +379,14 @@ Running migrations:
   Applying myapp.0001_initial... OK
 ```
 
-### Ambiente Administrativo do Django
+### Acessando o Ambiente Administrativo do Django
 
 O Django Admin é uma ferramenta ótima do Django, na verdade é uma interface de usuário CRUD (Criar, Ler, Atualizar, Excluir) para todos os seus modelos!
 
 Para entrar na interface do usuário administrativo, inicie o servidor com este comando:
 
 ```bash
-(venv) ... $ python3 manage.py runserver
+python3 manage.py runserver
 ```
 
 Na janela do navegador, digite na barra de endereço [127.0.0.1:8000/admin/](127.0.0.1:8000/admin/)
@@ -391,7 +410,7 @@ A lista `urlpatterns[]` recebe solicitações na rota `admin/` e as envia para `
 Para poder fazer login no ambiente administrativo do Django, precisamos criar um usuário. Isso é feito digitando este comando:
 
 ```bash
-(venv) ... $ python3 manage.py createsuperuser
+python3 manage.py createsuperuser
 ```
 
 O que dará um prompt como esse:
@@ -418,7 +437,7 @@ Superuser created successfully.
 Agora reinicie o servidor:
 
 ```bash
-(venv) ... $ python3 manage.py runserver
+python3 manage.py runserver
 ```
 
 Na janela do navegador, digite na barra de endereço [127.0.0.1:8000/admin/](127.0.0.1:8000/admin/)
@@ -466,7 +485,7 @@ SELECT * FROM myapp_livro;
 
 ### Fim do Tutorial
 
-Chegamos ao final deste tutorial. É importante entender o que faz cada um dos comandos acima explicados. Caso tenha dúvidas acesse o site da documentação do Django e também o curso de Django da w3schools nos links abaixo.
+Chegamos ao final desta aula/tutorial. É importante entender o que faz cada um dos comandos acima explicados. Caso tenha dúvidas acesse o site da documentação do Django e/ou o curso de Django da w3schools nos links abaixo.
 
-* [Documentação Django](https://docs.djangoproject.com/en/4.2/)
+* [Documentação Django](https://docs.djangoproject.com/pt-br/5.0/)
 * [Curso Django w3schools](https://www.w3schools.com/django/index.php)
