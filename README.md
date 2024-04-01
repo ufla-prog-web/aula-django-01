@@ -2,53 +2,88 @@
 
 <p align="center">
   <a href="#">
-    <img src="https://img.shields.io/badge/Aula-Python-brightgreen.svg" alt="Aula Introdução">
+    <img src="https://img.shields.io/badge/Aula-Python-brightgreen.svg" alt="Aula Python">
   </a>
   <a href="#">
-    <img src="https://img.shields.io/badge/Aula-Django-blue.svg" alt="Python">
+    <img src="https://img.shields.io/badge/Aula-Django-blue.svg" alt="Aula Django">
+  </a>
+  <a href="#">
+    <img src="https://img.shields.io/badge/Aula-Visão_Geral-orange.svg" alt="Aula VisãoGeral">
   </a>
 </p>
 
-Este projeto mostra uma visão geral do framework Python Django. E foi baseado no conteúdo ensinado na aula de programação web utilizando como base a [documentação do django](https://docs.djangoproject.com/pt-br/5.0/) e também o [curso de django da w3schools](https://www.w3schools.com/django/index.php).
+Aula Djando 01. Projeto utilizando o Django para ser desenvolvido na Aula de GAC116 - Programação Web.
+
+O objetivo desse projeto é mostrar uma visão geral do framework Python Django.
+
+Este tutorial foi elaborado baseado no tutorial disponível no [curso de django da w3schools](https://www.w3schools.com/django/index.php) e também baseado na [documentação oficial do django](https://docs.djangoproject.com/pt-br/5.0/).
 
 ## Linguagens Utilizadas
 
-* Python
+* Python - Linguagem de Programação Principal
   * [link do site python](https://www.python.org/)
   * [link do curso da w3schools](https://www.w3schools.com/python/default.asp)
-* HTML
+* HTML - Estrutura da Página Web
   * [link do curso da w3schools](https://www.w3schools.com/html/default.asp)
+* SQL - Linguagem para Consultas no Banco de Dados
+  * [link do curso da w3schools](https://www.w3schools.com/sql/default.asp)
 
 ## Frameworks Utilizados
 
-* Django
+* Django - Framework Web
   * [link do site do django](https://www.djangoproject.com/)
   * [link do curso da w3schools](https://www.w3schools.com/django/index.php)
 
 ## Bibliotecas Utilizadas
 
-* Jinja - [link do site do jinja](https://jinja.palletsprojects.com/en/3.1.x/)
+* Jinja - Biblioteca Python para Templates
+    * [link do site do jinja](https://jinja.palletsprojects.com/en/3.1.x/)
 
 ## Ferramentas Utilizadas
 
-* Visual Studio Code - [link](https://code.visualstudio.com/)
-* SQLite Online - [link](https://sqliteonline.com/)
-* Pip - [link](https://pypi.org/project/pip/)
-* Venv - [link](https://docs.python.org/pt-br/3/library/venv.html)
+* Visual Studio Code - IDE - [link](https://code.visualstudio.com/)
+* Pip - Gerenciador de Pacotes do Python - [link](https://pypi.org/project/pip/)
+* Venv - Ambiente Virtual do Python - [link](https://docs.python.org/pt-br/3/library/venv.html)
+* SQLite Online - SGBD - [link](https://sqliteonline.com/)
+* DB Browser for SQLite - SGBD - [link](https://sqlitebrowser.org/)
+
+## Arquitetura Web
+
+### Arquitetura Geral das Aplicação Web
+
+![Arquitetura das Aplicações Web](./docs/arquitetura-web.png)
+
+Fonte: [https://blog.grancursosonline.com.br/arquitetura-em-tres-camadas-para-aplicacoes-web/](https://blog.grancursosonline.com.br/arquitetura-em-tres-camadas-para-aplicacoes-web/)
+
+## Arquitetura de um Projeto Django
+
+### Arquitetura MVT - Geral
+
+![Arquitetura MVT - Geral](./docs/mvt-1.png)
+
+### Arquitetura MVT - Requisição
+
+![Arquitetura MVT - Requisição](./docs/mvt-2.png)
+
+### Arquitetura MVT - Detalhes da Requisição
+
+![Arquitetura MVT - Detalhes](./docs/mvt-3.png)
 
 ## Desenvolvimento do Projeto
 
-Os passos a seguir devem ser seguidos para se ter uma visão geral do framework Django.
+Os passos a seguir devem ser seguidos para alcançar o objetivo da aula.
 
-### Baixando o Repositório
+### Clonando o Repositório
 
-Inicilamente, baixe o repositório do [link](https://github.com/ufla-prog-web/aula-django-01) clicando em `Code` e `Download ZIP`.
-
-Ou então, clone o repositório através do comando abaixo:
+Inicialmente, clone o repositório da seguinte forma:
 
 ```bash
 git clone https://github.com/ufla-prog-web/aula-django-01.git
 ```
+
+### Baixando o Repositório
+
+Caso deseje ao invês de clonar o repositório (método acima), baixe o repositório do [link](https://github.com/ufla-prog-web/aula-django-01) clicando em `Code` e `Download ZIP`.
 
 ### Instalando o Python
 
@@ -74,15 +109,25 @@ Verifique a versão instalada do pip (para ter certeza que tudo ocorreu bem):
 pip3 --version
 ```
 
-### Instalando o Ambiente Virtual
+### Abrindo o Visual Studio Code
 
-Inicialmente, navegue no terminal até a pasta `aula-django-01` para realizar as instalações.
+Abra a IDE Visual Studio Code na pasta `aula-django-01`.
+
+**Dica:** Abra o arquivo `README.md` e clique em `Open Preview to the Side` para facilitar a construção da aplicação.
+
+**Dica:** Abra um terminal utilizando a IDE clicando em `Terminal` e `New Terminal`.
+
+### Navegando até a Pasta do Projeto
+
+Inicialmente, navegue no terminal do Visual Studio Code até a pasta `aula-django-01` para realizar as instalações.
 
 ```bash
 cd aula-django-01
 ```
 
-Instale o ambiente virtual (venv) para isolar as instalações/dependências do Python:
+### Criando o Ambiente Virtual
+
+Crie o ambiente virtual (venv) para isolar as instalações/dependências do Python:
 
 Unix/macOS
 
@@ -129,10 +174,28 @@ Instale o django dentro do ambiente virtual criado (testado na versão 5.0.3):
 pip3 install django
 ```
 
+ou
+
+```bash
+python -m pip install Django
+```
+
 Verifique a versão instalada do django (para ter certeza que tudo ocorreu bem):
 
 ```bash
 django-admin --version
+```
+
+ou
+
+```bash
+python3 -m django --version
+```
+
+**OBS:** Caso o terminal não encontre o django-admin, execute o seguinte comando (utilizado geralmente quando não se utiliza o venv no laboratório DCC07):
+
+```bash
+export PATH=$PATH:~/.local/bin
 ```
 
 ### Criando o Projeto no Django
@@ -153,6 +216,8 @@ Inicie a execução do projeto django criado utilizando o comando abaixo:
 python3 manage.py runserver
 ```
 
+**Explicação:** O comando acima é usado no Django para iniciar um servidor de desenvolvimento local. Ele é uma parte fundamental do processo de desenvolvimento web com o Django, pois permite que você execute e teste sua aplicação web em um ambiente de desenvolvimento local antes de implantá-la em um servidor web de produção. Ele inicia um servidor HTTP embutido no Django que pode lidar com solicitações HTTP. Por padrão, o servidor de desenvolvimento escuta na porta 8000, mas você pode especificar uma porta diferente como argumento opcional, por exemplo, `python3 manage.py runserver 8081`.
+
 Acesse através do navegdor web a página [http://127.0.0.1:8000/](http://127.0.0.1:8000/). Uma página padrão do django deve aparecer.
 
 ### Criando um Aplicativo
@@ -168,6 +233,18 @@ O comando abaixo faz a mesma coisa:
 ```bash
 django-admin startapp myapp
 ```
+
+**Explicação:** O comando acima é usado para criar uma nova aplicação dentro de um projeto Django. Após executar esse comando, você terá uma nova pasta chamada `myapp` dentro do seu projeto Django, contendo uma estrutura inicial de arquivos Python que você pode começar a editar para construir a lógica da sua aplicação. Uma aplicação (ou app) é um componente reutilizável e modular que realiza uma função específica dentro de um projeto Django. Um projeto Django pode conter várias aplicações, cada uma projetada para lidar com uma parte específica da funcionalidade do site. Cada aplicação é composta por:
+
+* **Models:** Definem a estrutura e o comportamento dos dados. Os modelos são utilizados para interagir com o banco de dados e representar os objetos do mundo real dentro do sistema.
+
+* **Views:** Responsáveis por processar as requisições do usuário e retornar as respostas adequadas. As views são geralmente funções que recebem uma solicitação HTTP e retornam uma resposta HTTP, como uma página da web renderizada ou um objeto JSON.
+
+* **Templates:** Arquivos de templates que definem a aparência das páginas da web. Os templates são usados pelas views para renderizar o conteúdo dinâmico que será enviado ao navegador do usuário.
+
+* **URLs:** Mapeiam as URLs do site para as views correspondentes. Cada aplicação geralmente tem seu próprio arquivo urls.py para definir os padrões de URL específicos dessa aplicação.
+
+* **Arquivos Estáticos (opcional):** Como CSS, JavaScript e imagens, que são usados para estilizar e adicionar interatividade às páginas da web.
 
 ### Criando a Primeira View no Django
 
@@ -210,9 +287,9 @@ Em seguida, execute o projeto django (veja se está tudo funcionando):
 python3 manage.py runserver
 ```
 
-OBS: deve aparecer uma mensagem de erro (Page not found) na página [http://127.0.0.1:8000](http://127.0.0.1:8000).
+Deverá aparecer uma mensagem de erro (*Page not found*) na página [http://127.0.0.1:8000](http://127.0.0.1:8000).
 
-OBS: assim, acesse a URL: [http://127.0.0.1:8000/teste/](http://127.0.0.1:8000/teste/`).
+Assim, acesse a URL: [http://127.0.0.1:8000/teste/](http://127.0.0.1:8000/teste/`).
 
 ### Criando o Primeiro Template no Django
 
@@ -344,7 +421,7 @@ class Livro(models.Model):
 
 O código acima irá criar uma Tabela chamada Livro no BD SQLite. Os campos `nome` e `autor` são campos de texto e estão configurados para ter no máximo 255 caracteres. O campo `ano` é um campo numérico inteiro.
 
-OBS: Quando criamos o projeto Django, obtivemos um banco de dados SQLite vazio. Ele estava na raiz da pasta `aula-django-01` e possui o nome de arquivo `db.sqlite3`. Por padrão, todos os modelos criados no projeto Django serão criados como tabelas neste banco de dados.
+**OBS:** Quando criamos o projeto Django, obtivemos um banco de dados SQLite vazio. Ele estava na raiz da pasta `aula-django-01` e possui o nome de arquivo `db.sqlite3`. Por padrão, todos os modelos criados no projeto Django serão criados como tabelas neste banco de dados.
 
 Em seguida, execute o código abaixo para que seja criado a tabela Livro no banco de dados de fato:
 
