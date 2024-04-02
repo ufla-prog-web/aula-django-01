@@ -53,7 +53,6 @@ Este tutorial foi elaborado baseado no tutorial disponível no [curso de django 
 
 ![Arquitetura das Aplicações Web](./docs/arquitetura-web.png)
 
-Fonte: [https://blog.grancursosonline.com.br/arquitetura-em-tres-camadas-para-aplicacoes-web/](https://blog.grancursosonline.com.br/arquitetura-em-tres-camadas-para-aplicacoes-web/)
 
 ## Arquitetura de um Projeto Django
 
@@ -242,13 +241,13 @@ django-admin startapp myapp
 
 * **Templates:** Arquivos de templates que definem a aparência das páginas da web. Os templates são usados pelas views para renderizar o conteúdo dinâmico que será enviado ao navegador do usuário.
 
-* **URLs:** Mapeiam as URLs do site para as views correspondentes. Cada aplicação geralmente tem seu próprio arquivo urls.py para definir os padrões de URL específicos dessa aplicação.
-
 * **Arquivos Estáticos (opcional):** Como CSS, JavaScript e imagens, que são usados para estilizar e adicionar interatividade às páginas da web.
+
+* **URLs:** Mapeiam as URLs do site para as views correspondentes. Cada aplicação geralmente tem seu próprio arquivo urls.py para definir os padrões de URL específicos dessa aplicação.
 
 ### Criando a Primeira View no Django
 
-Edite o arquivo de `views.py` (na pasta `myapp`) e coloque o seguinte conteúdo:
+Primeiramente, edite o arquivo de `views.py` (na pasta `myapp`) e coloque o seguinte conteúdo:
 
 ```python
 from django.shortcuts import render
@@ -287,9 +286,9 @@ Em seguida, execute o projeto django (veja se está tudo funcionando):
 python3 manage.py runserver
 ```
 
-Deverá aparecer uma mensagem de erro (*Page not found*) na página [http://127.0.0.1:8000](http://127.0.0.1:8000).
+Acesse a página [http://127.0.0.1:8000](http://127.0.0.1:8000). Deverá aparecer uma mensagem de erro (*Page not found*) nesta página.
 
-Assim, acesse a URL: [http://127.0.0.1:8000/teste/](http://127.0.0.1:8000/teste/`).
+Por fim, acesse a URL: [http://127.0.0.1:8000/teste/](http://127.0.0.1:8000/teste/`) e analise o resultado.
 
 ### Criando o Primeiro Template no Django
 
@@ -349,30 +348,13 @@ Em seguida, execute o projeto django (veja se está tudo funcionando):
 python3 manage.py runserver
 ```
 
-Em seguida, acesse a URL [http://127.0.0.1:8000/teste/](http://127.0.0.1:8000/teste/`).
+Por fim, acesse a URL [http://127.0.0.1:8000/teste/](http://127.0.0.1:8000/teste/`) e analise o resultado.
 
 ### Passando Parâmetros para o Template do Django
 
 Agora, iremos ver como podemos passar alguns parâmetros do Python para o template HTML utilizando tags do Django (através da biblioteca [Jinja](https://jinja.palletsprojects.com/en/3.1.x/)).
 
-Em seguida, edite o arquivo `views.py` na pasta `myapp` e coloque o seguinte conteúdo:
-
-```python
-from django.http import HttpResponse
-from django.template import loader
-
-def teste(request):
-    template = loader.get_template('paginateste.html')
-    context = {
-        "nome": "José Silva",
-        "idade": 30,
-        "email": "jose.silva@email.com",
-        "telefone": "3333-1234"
-    }
-    return HttpResponse(template.render(context, request))
-```
-
-Em seguida, edite o arquivo HTML com nome `paginateste.html` na pasta `templates` com o seguinte conteúdo:
+Para isso, edite o arquivo HTML com nome `paginateste.html` na pasta `templates` com o seguinte conteúdo:
 
 ```html
 <!DOCTYPE html>
@@ -394,13 +376,30 @@ Em seguida, edite o arquivo HTML com nome `paginateste.html` na pasta `templates
 </html>
 ```
 
+Em seguida, edite o arquivo `views.py` na pasta `myapp` e coloque o seguinte conteúdo:
+
+```python
+from django.http import HttpResponse
+from django.template import loader
+
+def teste(request):
+    template = loader.get_template('paginateste.html')
+    context = {
+        "nome": "José Silva",
+        "idade": 30,
+        "email": "jose.silva@email.com",
+        "telefone": "3333-1234"
+    }
+    return HttpResponse(template.render(context, request))
+```
+
 Em seguida, execute o projeto django:
 
 ```bash
 python3 manage.py runserver
 ```
 
-Em seguida, acesse a URL [http://127.0.0.1:8000/teste/](http://127.0.0.1:8000/teste/`).
+Por fim, acesse a URL [http://127.0.0.1:8000/teste/](http://127.0.0.1:8000/teste/`) e analise o resultado.
 
 ### Criando o Primeiro Modelo no Django
 
@@ -511,7 +510,7 @@ Minha senha não atendeu aos critérios, mas este é um ambiente de teste, e opt
 Superuser created successfully.
 ```
 
-Agora reinicie o servidor:
+Agora, reinicie o servidor:
 
 ```bash
 python3 manage.py runserver
@@ -546,7 +545,7 @@ from .models import Livro
 admin.site.register(Livro)
 ```
 
-Agora volte para o navegador e atualize a barra de endereço [127.0.0.1:8000/admin/](127.0.0.1:8000/admin/)
+Agora, acesse o endereço [127.0.0.1:8000/admin/](127.0.0.1:8000/admin/) e analise o resultado.
 
 Clique em Livros faça a inserção de alguns livros no modelo criado.
 
