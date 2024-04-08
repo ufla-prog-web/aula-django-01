@@ -53,7 +53,6 @@ Este tutorial foi elaborado baseado no tutorial disponível no [curso de django 
 
 ![Arquitetura das Aplicações Web](./docs/arquitetura-web.png)
 
-
 ## Arquitetura de um Projeto Django
 
 ### Arquitetura MVT - Geral
@@ -299,13 +298,14 @@ Abra o arquivo HTML e insira o seguinte:
 ```html
 <!DOCTYPE html>
 <html>
-<body>
-
-<h1>Olá Mundo!</h1>
-
-<p>Bem-vindo ao meu primeiro projeto Django!</p>
-
-</body>
+  <head>
+    <meta charset="utf-8">
+    <title>Aplicação Django</title>
+  </head>
+  <body>
+    <h1>Olá Mundo!</h1>
+    <p>Bem-vindo ao meu primeiro projeto Django!</p>
+  </body>
 </html>
 ```
 
@@ -359,20 +359,20 @@ Para isso, edite o arquivo HTML com nome `paginateste.html` na pasta `templates`
 ```html
 <!DOCTYPE html>
 <html>
-<body>
-
-<h1>Django: Tags de Templates</h1>
-
-<p>Neste exemplos utilizamos as tags de templates do Django (Jinja)</p>
-
-<ul>
-    <li><b>Nome:</b> {{ nome }} </li>
-    <li><b>Idade:</b> {{ idade }} </li>
-    <li><b>E-mail:</b> {{ email }} </li>
-    <li><b>Telefone:</b> {{ telefone }} </li>
-</ul>
-
-</body>
+  <head>
+    <meta charset="utf-8">
+    <title>Aplicação Django</title>
+  </head>
+  <body>
+    <h1>Django: Tags de Templates</h1>
+    <p>Neste exemplos utilizamos as tags de templates do Django (Jinja)</p>
+    <ul>
+        <li><b>Nome:</b> {{ nome }} </li>
+        <li><b>Idade:</b> {{ idade }} </li>
+        <li><b>E-mail:</b> {{ email }} </li>
+        <li><b>Telefone:</b> {{ telefone }} </li>
+    </ul>
+  </body>
 </html>
 ```
 
