@@ -12,13 +12,29 @@
   </a>
 </p>
 
-Aula Djando 01. Projeto utilizando o Django para ser desenvolvido na Aula de GAC116 - Programação Web.
+## Índice
 
-O objetivo desse projeto é mostrar uma visão geral do framework Python Django.
+* [Introdução](#introdução)
+* [Recursos Utilizados](#recursos-utilizados)
+* [Fundamentos Teóricos](#fundamentos-teóricos)
+* [Desenvolvimento do Projeto](#desenvolvimento-do-projeto)
+* [Créditos e Referências](#créditos-e-referências)
+
+## Introdução
+
+Aula Django 01. Projeto utilizando o Django para ser desenvolvido na Aula de GAC116 - Programação Web.
+
+O objetivo desse projeto é mostrar uma visão geral do framework Python Django em que as principais funcionalidades do Django são apresentadas.
 
 Este tutorial foi elaborado baseado no tutorial disponível no [curso de django da w3schools](https://www.w3schools.com/django/index.php) e também baseado na [documentação oficial do django](https://docs.djangoproject.com/pt-br/5.0/).
 
-## Linguagens Utilizadas
+A aula está estruturada em forma de tutorial, de forma que cada estudante vá replicando em seu computador os conceitos e recursos aqui mostrados. A aula mostra a evolução do código/solução para que os estudantes possa compreender como as diferentes tecnologias se conectam.
+
+## Recursos Utilizados
+
+A seguir estão listados os principais recursos utilizados no desenvolvimento desta aula.
+
+### Linguagens
 
 * Python - Linguagem de Programação Principal
   * [link do site python](https://www.python.org/)
@@ -28,42 +44,46 @@ Este tutorial foi elaborado baseado no tutorial disponível no [curso de django 
 * SQL - Linguagem para Consultas no Banco de Dados
   * [link do curso da w3schools](https://www.w3schools.com/sql/default.asp)
 
-## Frameworks Utilizados
+### Frameworks
 
 * Django - Framework Web
   * [link do site do django](https://www.djangoproject.com/)
   * [link do curso da w3schools](https://www.w3schools.com/django/index.php)
 
-## Bibliotecas Utilizadas
+### Bibliotecas
 
 * Jinja - Biblioteca Python para Templates
     * [link do site do jinja](https://jinja.palletsprojects.com/en/3.1.x/)
 
-## Ferramentas Utilizadas
+### Ferramentas
 
 * Visual Studio Code - IDE - [link](https://code.visualstudio.com/)
 * Pip - Gerenciador de Pacotes do Python - [link](https://pypi.org/project/pip/)
 * Venv - Ambiente Virtual do Python - [link](https://docs.python.org/pt-br/3/library/venv.html)
 * SQLite Online - SGBD - [link](https://sqliteonline.com/)
 * DB Browser for SQLite - SGBD - [link](https://sqlitebrowser.org/)
+* Git - Sistema de Controle de Versão - [link](https://git-scm.com/)
+* Github - Plataforma de Hospedagem de Códigos - [link](https://github.com/)
 
-## Arquitetura Web
+## Fundamentos Teóricos
 
-### Arquitetura Geral das Aplicação Web
+### Arquitetura Web
+
+#### Arquitetura Geral das Aplicação Web
 
 ![Arquitetura das Aplicações Web](./docs/arquitetura-web.png)
 
-## Arquitetura de um Projeto Django
+### Arquitetura de um Projeto Django
 
-### Arquitetura MVT - Geral
+#### Arquitetura MVT - Geral
 
 ![Arquitetura MVT - Geral](./docs/mvt-1.png)
 
-### Arquitetura MVT - Requisição
+#### Arquitetura MVT - Requisição
 
 ![Arquitetura MVT - Requisição](./docs/mvt-2.png)
 
-### Arquitetura MVT - Detalhes da Requisição
+#### Arquitetura MVT - Detalhes da Requisição
 
 ![Arquitetura MVT - Detalhes](./docs/mvt-3.png)
 
@@ -524,6 +544,8 @@ Na tela aberta você pode criar, ler, atualizar e excluir grupos e usuários, ma
 
 O modelo Livro está faltando, como deveria estar. Você tem que informar ao Django quais modelos devem estar visíveis na interface administrativa.
 
+### Incluindo o Modelo Livro na Interface Administrativa
+
 Para incluir o modelo Livro na interface administrativa, temos que dizer ao Django que este modelo deve estar visível na interface administrativa.
 
 Isso é feito em um arquivo chamado `admin.py`, e está localizado na pasta do seu aplicativo, que no nosso caso é a pasta `myapp`.
@@ -559,9 +581,9 @@ Execute o comando abaixo nessa ferramenta para listar os livros que você cadast
 SELECT * FROM myapp_livro;
 ```
 
-### Fim do Tutorial
+## Créditos e Referências
 
-Chegamos ao final desta aula/tutorial. É importante entender o que faz cada um dos comandos acima explicados. Caso tenha dúvidas acesse o site da documentação do Django e/ou o curso de Django da w3schools nos links abaixo.
+Este tutorial foi inspirado nos seguintes recursos:
 
-* [Documentação Django](https://docs.djangoproject.com/pt-br/5.0/)
-* [Curso Django w3schools](https://www.w3schools.com/django/index.php)
+* [Documentação oficial do django](https://docs.djangoproject.com/pt-br/5.0/)
+* [Curso de Django da w3schools](https://www.w3schools.com/django/index.php)
