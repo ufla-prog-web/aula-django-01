@@ -7,9 +7,6 @@
   <a href="#">
     <img src="https://img.shields.io/badge/Aula-Django-blue.svg" alt="Aula Django">
   </a>
-  <a href="#">
-    <img src="https://img.shields.io/badge/Aula-Visão_Geral-orange.svg" alt="Aula VisãoGeral">
-  </a>
 </p>
 
 ## Índice
@@ -17,6 +14,7 @@
 * [Introdução](#introdução)
 * [Recursos Utilizados](#recursos-utilizados)
 * [Fundamentos Teóricos](#fundamentos-teóricos)
+* [Objetivo da Aula](#objetivo-da-aula)
 * [Desenvolvimento do Projeto](#desenvolvimento-do-projeto)
 * [Créditos e Referências](#créditos-e-referências)
 
@@ -57,13 +55,13 @@ A seguir estão listados os principais recursos utilizados no desenvolvimento de
 
 ### Ferramentas
 
+* Git - Sistema de Controle de Versão - [link](https://git-scm.com/)
+* Github - Plataforma de Hospedagem de Códigos - [link](https://github.com/)
 * Visual Studio Code - IDE - [link](https://code.visualstudio.com/)
 * Pip - Gerenciador de Pacotes do Python - [link](https://pypi.org/project/pip/)
 * Venv - Ambiente Virtual do Python - [link](https://docs.python.org/pt-br/3/library/venv.html)
 * SQLite Online - SGBD - [link](https://sqliteonline.com/)
 * DB Browser for SQLite - SGBD - [link](https://sqlitebrowser.org/)
-* Git - Sistema de Controle de Versão - [link](https://git-scm.com/)
-* Github - Plataforma de Hospedagem de Códigos - [link](https://github.com/)
 
 ## Fundamentos Teóricos
 
@@ -86,6 +84,10 @@ A seguir estão listados os principais recursos utilizados no desenvolvimento de
 #### Arquitetura MVT - Detalhes da Requisição
 
 ![Arquitetura MVT - Detalhes](./docs/mvt-3.png)
+
+## Objetivo da Aula
+
+O objetivo da aula é apresentar uma introdução ao framework python django. O Django é utilizado no desenvolvimento de páginas web do lado do servidor, ou seja, é uma ferramenta backend e funciona segundo a arquitetura MVT.
 
 ## Desenvolvimento do Projeto
 
@@ -236,20 +238,22 @@ python3 manage.py runserver
 
 **Explicação:** O comando acima é usado no Django para iniciar um servidor de desenvolvimento local. Ele é uma parte fundamental do processo de desenvolvimento web com o Django, pois permite que você execute e teste sua aplicação web em um ambiente de desenvolvimento local antes de implantá-la em um servidor web de produção. Ele inicia um servidor HTTP embutido no Django que pode lidar com solicitações HTTP. Por padrão, o servidor de desenvolvimento escuta na porta 8000, mas você pode especificar uma porta diferente como argumento opcional, por exemplo, `python3 manage.py runserver 8081`.
 
-Acesse através do navegdor web a página [http://127.0.0.1:8000/](http://127.0.0.1:8000/). Uma página padrão do django deve aparecer.
+Acesse através do navegdor web a página [http://127.0.0.1:8000/](http://127.0.0.1:8000/). Uma página padrão do django deve aparecer (semelhante a mostrada abaixo).
+
+![Tela Padrão Django](./docs/tela-django-inicial.png)
 
 ### Criando um Aplicativo
 
 Execute o comando abaixo para criar um aplicativo chamado `myapp` dentro do projeto `mysite`:
 
 ```bash
-python3 manage.py startapp myapp
+django-admin startapp myapp
 ```
 
 O comando abaixo faz a mesma coisa:
 
 ```bash
-django-admin startapp myapp
+python3 manage.py startapp myapp
 ```
 
 **Explicação:** O comando acima é usado para criar uma nova aplicação dentro de um projeto Django. Após executar esse comando, você terá uma nova pasta chamada `myapp` dentro do seu projeto Django, contendo uma estrutura inicial de arquivos Python que você pode começar a editar para construir a lógica da sua aplicação. Uma aplicação (ou app) é um componente reutilizável e modular que realiza uma função específica dentro de um projeto Django. Um projeto Django pode conter várias aplicações, cada uma projetada para lidar com uma parte específica da funcionalidade do site. Cada aplicação é composta por:
@@ -309,11 +313,15 @@ Acesse a página [http://127.0.0.1:8000](http://127.0.0.1:8000). Deverá aparece
 
 Por fim, acesse a URL: [http://127.0.0.1:8000/teste/](http://127.0.0.1:8000/teste/`) e analise o resultado.
 
+### Atividade - Nova View e Nova Rota
+
+Utilizando o exemplo anterior crie uma nova view e uma nova rota para a sua aplicação. Em seguida, faça os testes para verificar se tudo funcionou corretamente.
+
 ### Criando o Primeiro Template no Django
 
 Crie uma pasta `templates` dentro da pasta `myapp` e crie um arquivo HTML chamado `paginateste.html`.
 
-Abra o arquivo HTML e insira o seguinte:
+Abra o arquivo HTML e insira o seguinte conteúdo:
 
 ```html
 <!DOCTYPE html>
@@ -338,6 +346,9 @@ from django.template import loader
 def teste(request):
     template = loader.get_template('paginateste.html')
     return HttpResponse(template.render())
+
+...
+
 ```
 
 Para poder trabalhar com coisas mais complicadas do que "Hello World!", temos que dizer ao Django que um novo aplicativo foi criado. Isso é feito no arquivo `settings.py` da pasta `mysite`. Procure a lista `INSTALLED_APPS[]` e adicione o aplicativo `myapp` que foi criado. Veja o exemplo abaixo:
@@ -369,6 +380,10 @@ python3 manage.py runserver
 ```
 
 Por fim, acesse a URL [http://127.0.0.1:8000/teste/](http://127.0.0.1:8000/teste/`) e analise o resultado.
+
+### Atividade - Nova Página
+
+Utilizando o exemplo anterior crie uma nova página HTML e atualize a view na sua aplicação que você mesmo havia criado na atividade anterior. Em seguida, faça os testes para verificar se tudo funcionou corretamente.
 
 ### Passando Parâmetros para o Template do Django
 
