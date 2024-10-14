@@ -65,25 +65,81 @@ A seguir estão listados os principais recursos utilizados no desenvolvimento de
 
 ## Fundamentos Teóricos
 
-### Arquitetura Web
+A seguir estão destacados alguns dos principais fundamentos teóricos para entendimento desse tutorial.
 
-#### Arquitetura Geral das Aplicação Web
+### Arquitetura Web de Três Camadas
+
+A arquitetura web de três camadas é um padrão de design de software que organiza uma aplicação em três níveis distintos, cada um com responsabilidades bem definidas. Essas camadas são:
+
+**1. Camada de Apresentação (Frontend)**:
+
+* Também chamada de interface de usuário, essa camada é responsável pela interação com o usuário. Ela inclui tudo o que o usuário vê e utiliza para interagir com o sistema, como páginas web, formulários, botões, e elementos visuais em geral.
+* Aqui, são usados tecnologias como HTML, CSS, JavaScript e frameworks frontend (React, Angular, etc.).
+* A camada de apresentação envia as entradas dos usuários para a camada de negócios e exibe os resultados de volta para o usuário.
+
+**2. Camada de Negócios (Lógica da Aplicação - Backend)**:
+
+* Nessa camada está a lógica de negócios da aplicação, ou seja, as regras que governam como os dados devem ser processados e as operações que devem ser realizadas. Ela trata os pedidos recebidos da camada de apresentação e executa as operações necessárias.
+* Essa camada pode incluir validações, cálculos e chamadas ao banco de dados. Em termos de tecnologia, é geralmente desenvolvida com linguagens de programação como Python, Java, PHP, ou frameworks como Django, Spring Boot, Laravel, etc.
+
+**3. Camada de Dados (Banco de Dados - Backend)**:
+
+* A camada de dados gerencia o armazenamento e recuperação de dados em um banco de dados. Ela é responsável pela persistência dos dados e operações como criar, ler, atualizar e deletar (CRUD).
+* Geralmente, são usados sistemas de gerenciamento de banco de dados relacionais (como MySQL, PostgreSQL) ou não relacionais (como MongoDB).
+* A camada de negócios interage com essa camada para armazenar e buscar dados conforme necessário.
+
+**Fluxo da Arquitetura de Três Camadas**:
+
+* O usuário interage com a Camada de Apresentação.
+* A Camada de Apresentação faz requisições para a Camada de Negócios.
+* A Camada de Negócios processa a lógica e, se necessário, interage com a Camada de Dados.
+* A Camada de Dados responde com os dados necessários para a Camada de Negócios.
+* A Camada de Negócios retorna os resultados processados para a Camada de Apresentação.
+* A Camada de Apresentação exibe os resultados para o usuário.
+
+Essa separação facilita a manutenção e escalabilidade da aplicação, permitindo que cada camada possa ser modificada ou melhorada de forma independente.
 
 ![Arquitetura das Aplicações Web](./docs/arquitetura-web.png)
 
-### Arquitetura de um Projeto Django
+### Arquitetura MVT do Django
 
-#### Arquitetura MVT - Geral
+O modelo MVT (Model-View-Template) é uma arquitetura usada no framework Django para desenvolvimento de aplicações web. Ele organiza a aplicação em três componentes principais:
+
+* **Model (Modelo)**: Responsável pela definição da estrutura dos dados e a interação com o banco de dados. Ele define as classes que representam as tabelas e seus relacionamentos, além de métodos para realizar consultas e operações nos dados.
+
+* **View (Visão)**: Contém a lógica da aplicação. A view recebe as requisições dos usuários, processa os dados (geralmente acessando o Model), e retorna uma resposta, como uma página HTML renderizada ou dados em formato JSON.
+
+* **Template (Apresentação)**: É a camada de apresentação, onde o conteúdo dinâmico gerado pela View é inserido em arquivos HTML. Os templates permitem a separação da lógica de negócio da interface de usuário, tornando o código mais organizado.
+
+Diferente do padrão MVC, onde o controller gerencia a lógica de controle, no Django, a função das views cumpre esse papel, enquanto os templates gerenciam a apresentação.
+
+A figura abaixo detalha os componentes descritos acima.
 
 ![Arquitetura MVT - Geral](./docs/mvt-1.png)
 
-#### Arquitetura MVT - Requisição
+No modelo MVT do Django, as requisições seguem um fluxo bem definido, onde cada componente (Model, View, Template) desempenha um papel específico no processamento e resposta de uma requisição HTTP. O fluxo funciona da seguinte forma:
+
+* **Recebimento da Requisição (HTTP Request)**: Quando um usuário acessa uma URL no navegador, o Django recebe a requisição HTTP correspondente. Esse processo começa no URL *dispatcher* (mapeador de URLs), que verifica qual view deve ser chamada com base na URL requisitada.
+
+* **View (Visão)**: A View é o ponto de entrada para o processamento da requisição. A função ou classe associada à URL recebida é executada. Ela é responsável por: Receber a requisição do usuário; Executar a lógica necessária, que pode incluir validações, processamento de dados, ou interações com o banco de dados através dos Models; e Retornar uma resposta apropriada.
+
+* **Model (Modelo)**: Se a View precisar acessar ou manipular dados, ela fará isso por meio do Model. O Model contém a lógica de negócios relacionada à persistência de dados, permitindo a View realizar operações como criar, ler, atualizar ou deletar registros no banco de dados.
+
+* **Template (Apresentação)**: Após processar os dados, a View geralmente prepara um contexto (um dicionário de dados) e passa esse contexto para o Template. O Template é um arquivo HTML com marcações especiais do Django que permitem a inserção de dados dinâmicos. O Template renderiza esses dados em uma estrutura HTML, exibindo o conteúdo adequado com base nas informações passadas pela View.
+
+* **Resposta (HTTP Response)**: Depois que o Template é renderizado, a View retorna uma resposta HTTP (normalmente uma página HTML ou dados JSON em APIs) ao navegador ou cliente. Essa resposta contém o conteúdo processado e visualizado pelo usuário.
+
+A figura abaixo detalha o fluxo descrito acima.
 
 ![Arquitetura MVT - Requisição](./docs/mvt-2.png)
 
-#### Arquitetura MVT - Detalhes da Requisição
+A figura abaixo detalha ainda mais a arquitetura MVT e as tecnologias envolvidas.
 
 ![Arquitetura MVT - Detalhes](./docs/mvt-3.png)
+
+### Modelo ORM
+
+O Django suporta o conceito de Mapeamento Objeto-Relacional (ORM). Através do ORM você define a modelagem de dados através de classes em Python. Com isso é possível gerar suas tabelas no banco de dados e manipulá-las sem necessidade de utilizar SQL (o que também é possível). Os registros de cada tabela são representados como instâncias das classes correspondentes.
 
 ## Objetivo da Aula
 
@@ -291,6 +347,8 @@ urlpatterns = [
 ]
 ```
 
+O comando acima, de forma geral, cadastra uma nova rota na sua aplicação. Quando o usuário acessar a rota ou URL [http://127.0.0.1:8000/teste/](http://127.0.0.1:8000/teste/), o método views.teste será chamado.
+
 Existe um arquivo chamado `urls.py` na pasta `mysite`, abra esse arquivo e coloque o seguinte conteúdo nesse arquivo.
 
 ```python
@@ -313,7 +371,7 @@ Acesse a página [http://127.0.0.1:8000](http://127.0.0.1:8000). Deverá aparece
 
 Por fim, acesse a URL: [http://127.0.0.1:8000/teste/](http://127.0.0.1:8000/teste/`) e analise o resultado.
 
-### Atividade - Nova View e Nova Rota
+### Atividade 1 - Crie uma Nova View e Nova Rota
 
 Utilizando o exemplo anterior crie uma nova view e uma nova rota para a sua aplicação. Em seguida, faça os testes para verificar se tudo funcionou corretamente.
 
@@ -381,15 +439,15 @@ python3 manage.py runserver
 
 Por fim, acesse a URL [http://127.0.0.1:8000/teste/](http://127.0.0.1:8000/teste/`) e analise o resultado.
 
-### Atividade - Nova Página
+### Atividade 2 - Crie uma Nova Página
 
-Utilizando o exemplo anterior crie uma nova página HTML e atualize a view na sua aplicação que você mesmo havia criado na atividade anterior. Em seguida, faça os testes para verificar se tudo funcionou corretamente.
+Utilizando o exemplo anterior crie uma nova página HTML e atualize a view na sua aplicação que você mesmo havia criado na Atividade 1 feita anteriormente. Em seguida, faça os testes para verificar se tudo funcionou corretamente.
 
 ### Passando Parâmetros para o Template do Django
 
 Agora, iremos ver como podemos passar alguns parâmetros do Python para o template HTML utilizando tags do Django (através da biblioteca [Jinja](https://jinja.palletsprojects.com/en/3.1.x/)).
 
-Para isso, edite o arquivo HTML com nome `paginateste.html` na pasta `templates` com o seguinte conteúdo:
+Para isso, crie um arquivo HTML com nome `testeparametros.html` na pasta `templates` com o seguinte conteúdo:
 
 ```html
 <!DOCTYPE html>
@@ -406,26 +464,39 @@ Para isso, edite o arquivo HTML com nome `paginateste.html` na pasta `templates`
         <li><b>Idade:</b> {{ idade }} </li>
         <li><b>E-mail:</b> {{ email }} </li>
         <li><b>Telefone:</b> {{ telefone }} </li>
+        <li><b>Usuário Ativo:</b> {{ usuarioativo }} </li>
     </ul>
   </body>
 </html>
 ```
 
-Em seguida, edite o arquivo `views.py` na pasta `myapp` e coloque o seguinte conteúdo:
+Em seguida, edite o arquivo `views.py` na pasta `myapp` e coloque o seguinte conteúdo ao final:
 
 ```python
-from django.http import HttpResponse
-from django.template import loader
+...
 
-def teste(request):
-    template = loader.get_template('paginateste.html')
+def testeparametros(request):
+    template = loader.get_template('testeparametros.html')
     context = {
         "nome": "José Silva",
         "idade": 30,
         "email": "jose.silva@email.com",
-        "telefone": "3333-1234"
+        "telefone": "3333-1234",
+        "usuarioativo": True
     }
     return HttpResponse(template.render(context, request))
+```
+
+Em seguida, edite o arquivo nomeado `urls.py` na mesma pasta do arquivo `views.py` e digite o código abaixo:
+
+
+```python
+...
+
+urlpatterns = [
+    ...
+    path('testeparametros/', views.testeparametros, name='testeparametros') # linha adicionada
+]
 ```
 
 Em seguida, execute o projeto django:
@@ -434,7 +505,11 @@ Em seguida, execute o projeto django:
 python3 manage.py runserver
 ```
 
-Por fim, acesse a URL [http://127.0.0.1:8000/teste/](http://127.0.0.1:8000/teste/`) e analise o resultado.
+Por fim, acesse a URL [http://127.0.0.1:8000/testeparametros/](http://127.0.0.1:8000/testeparametros/`) e analise o resultado.
+
+### Atividade 3 - Passando Novos Parâmetros
+
+Altere o método `testeparametros` no arquivo `views.py` para passar dois novos parâmetros para o tamplate. Dessa maneira, é necessário alterar também o arquivo `testeparametros.html` para receber os dados passados e imprimi-los na tela.
 
 ### Criando o Primeiro Modelo no Django
 
@@ -537,7 +612,7 @@ This password is too common.
 Bypass password validation and create user anyway? [y/N]: y
 ```
 
-**OBS:** Aqui você deve inserir: nome de usuário, endereço de e-mail (você pode simplesmente deixar em branco ou escolher um endereço de e-mail falso) e senha. Em meu caso coloquei usuário `admin` email em branco e senha `admin`.
+**OBS:** Aqui você deve inserir: nome de usuário, endereço de e-mail (você pode simplesmente deixar em branco ou escolher um endereço de e-mail falso) e senha. Em meu caso coloquei usuário `admin` email em branco e senha `admin`. 
 
 Minha senha não atendeu aos critérios, mas este é um ambiente de teste, e opto por criar usuário mesmo assim, digitando `y` gerando assim a saída:
 
@@ -555,7 +630,7 @@ Na janela do navegador, digite na barra de endereço [127.0.0.1:8000/admin/](127
 
 Preencha o formulário com o nome de usuário e senha corretos (`admin` e `admin`):
 
-Na tela aberta você pode criar, ler, atualizar e excluir grupos e usuários, mas onde está o modelo de Livro?
+Na tela aberta você pode Criar, Ler, Atualizar e Excluir grupos e usuários, mas onde está o modelo de Livro?
 
 O modelo Livro está faltando, como deveria estar. Você tem que informar ao Django quais modelos devem estar visíveis na interface administrativa.
 
@@ -584,7 +659,9 @@ admin.site.register(Livro)
 
 Agora, acesse o endereço [127.0.0.1:8000/admin/](127.0.0.1:8000/admin/) e analise o resultado.
 
-Clique em Livros faça a inserção de alguns livros no modelo criado.
+### Atividade 4 - Cadastro de Livros
+
+No ambiente administrativo, vá em Livros e clique em Add Livro, em seguida, cadastre três livros quaisquer. Em seguida, faça testes para realizar a exclusão de um livro. Em seguida, faça testes para realizar a atualização de algum dado em algum livro.
 
 ### Visualizando o Modelo de Dados
 
@@ -595,6 +672,12 @@ Execute o comando abaixo nessa ferramenta para listar os livros que você cadast
 ```sql
 SELECT * FROM myapp_livro;
 ```
+
+Uma outra ferramenta que podemos utilizar é o [DB Browser for SQLite](https://sqlitebrowser.org/). Utilize essa ferramenta para abrir o arquivo do BD chamado `db.sqlite3` que está na raiz do projeto e assim ver as modificações no modelo.
+
+### Atividade 5 - Crie um Outro Modelo 
+
+Crie um outro modelo (tabela) em sua aplicação e registre esse modelo. Acesse o ambiente administrativo e realize a inclusão de dados no modelo criado.
 
 ## Créditos e Referências
 
