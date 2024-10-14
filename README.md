@@ -23,6 +23,8 @@
 
 ## Introdução
 
+<a href="#índice"><img align="right" width="15" height="15" src="./docs/up-arrow.png" alt="Voltar para topo"></a>
+
 Aula Django 01. Projeto utilizando o Django para ser desenvolvido na Aula de GAC116 - Programação Web.
 
 O objetivo desse projeto é mostrar uma visão geral do framework Python Django em que as principais funcionalidades do Django são apresentadas.
@@ -32,6 +34,8 @@ Este tutorial foi elaborado baseado no tutorial disponível no [curso de django 
 A aula está estruturada em forma de tutorial, de forma que cada estudante vá replicando em seu computador os conceitos e recursos aqui mostrados. A aula mostra a evolução do código/solução para que os estudantes possa compreender como as diferentes tecnologias se conectam.
 
 ## Recursos Utilizados
+
+<a href="#índice"><img align="right" width="15" height="15" src="./docs/up-arrow.png" alt="Voltar para topo"></a>
 
 A seguir estão listados os principais recursos utilizados no desenvolvimento desta aula.
 
@@ -67,6 +71,8 @@ A seguir estão listados os principais recursos utilizados no desenvolvimento de
 * DB Browser for SQLite - SGBD - [link](https://sqlitebrowser.org/)
 
 ## Fundamentos Teóricos
+
+<a href="#índice"><img align="right" width="15" height="15" src="./docs/up-arrow.png" alt="Voltar para topo"></a>
 
 A seguir estão destacados alguns dos principais fundamentos teóricos para entendimento desse tutorial.
 
@@ -168,9 +174,13 @@ O Django suporta o conceito de Mapeamento Objeto-Relacional (ORM). Através do O
 
 ## Objetivo da Aula
 
+<a href="#índice"><img align="right" width="15" height="15" src="./docs/up-arrow.png" alt="Voltar para topo"></a>
+
 O objetivo da aula é apresentar uma introdução ao framework python django. O Django é utilizado no desenvolvimento de páginas web do lado do servidor, ou seja, é uma ferramenta backend e funciona segundo a arquitetura MVT.
 
 ## Desenvolvimento do Projeto
+
+<a href="#índice"><img align="right" width="15" height="15" src="./docs/up-arrow.png" alt="Voltar para topo"></a>
 
 Os passos a seguir devem ser seguidos para alcançar o objetivo da aula.
 
@@ -761,6 +771,8 @@ Uma outra ferramenta que podemos utilizar é o [DB Browser for SQLite](https://s
 Crie um outro modelo (tabela) em sua aplicação e registre esse modelo. Acesse o ambiente administrativo e realize a inclusão de dados no modelo criado.
 
 ## Créditos e Referências
+
+<a href="#índice"><img align="right" width="15" height="15" src="./docs/up-arrow.png" alt="Voltar para topo"></a>
 
 Este tutorial foi inspirado nos seguintes recursos:
 
