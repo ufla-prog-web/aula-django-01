@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="#">
-    <img src="https://img.shields.io/badge/Aula-Python-brightgreen.svg" alt="Aula Python">
+    <img src="https://img.shields.io/badge/Aula-Visão_Geral_Django-brightgreen.svg" alt="Aula Django Visão Geral">
   </a>
   <a href="#">
     <img src="https://img.shields.io/badge/Aula-Django-blue.svg" alt="Aula Django">
@@ -25,48 +25,41 @@
 
 <a href="#índice"><img align="right" width="15" height="15" src="./docs/up-arrow.png" alt="Voltar para topo"></a>
 
-Aula Django 01. Projeto utilizando o Django para ser desenvolvido na Aula de GAC116 - Programação Web.
+O objetivo deste tutorial é apresentar uma visão geral do framework Python Django em que as principais funcionalidades do Django são apresentadas. Esse projeto será utilizado na disciplina GAC116 - Programação Web da Universidade Federal de Lavras (UFLA).
 
-O objetivo desse projeto é mostrar uma visão geral do framework Python Django em que as principais funcionalidades do Django são apresentadas.
+Este tutorial foi elaborado baseado no tutorial disponível no [curso de Django da W3Schools](https://www.w3schools.com/django/index.php) e também baseado na [documentação oficial do Django](https://docs.djangoproject.com/pt-br/5.0/).
 
-Este tutorial foi elaborado baseado no tutorial disponível no [curso de django da w3schools](https://www.w3schools.com/django/index.php) e também baseado na [documentação oficial do django](https://docs.djangoproject.com/pt-br/5.0/).
-
-A aula está estruturada em forma de tutorial, de forma que cada estudante vá replicando em seu computador os conceitos e recursos aqui mostrados. A aula mostra a evolução do código/solução para que os estudantes possa compreender como as diferentes tecnologias se conectam.
+A aula está organizada no formato de tutorial, permitindo que cada estudante replique em seu computador os conceitos e recursos apresentados. O código será desenvolvido gradualmente, de modo a evidenciar a evolução da solução e facilitar a compreensão de como as tecnologias Django, HTML e SQL se integram na construção de aplicações web.
 
 ## Recursos Utilizados
 
 <a href="#índice"><img align="right" width="15" height="15" src="./docs/up-arrow.png" alt="Voltar para topo"></a>
 
-A seguir estão listados os principais recursos utilizados no desenvolvimento desta aula.
+A seguir estão listados os principais recursos empregados no desenvolvimento desta aula.
 
 ### Linguagens
 
-* Python - Linguagem de Programação Principal
-  * [link do site python](https://www.python.org/)
-  * [link do curso da w3schools](https://www.w3schools.com/python/default.asp)
-* HTML - Estrutura da Página Web
-  * [link do curso da w3schools](https://www.w3schools.com/html/default.asp)
-* SQL - Linguagem para Consultas no Banco de Dados
-  * [link do curso da w3schools](https://www.w3schools.com/sql/default.asp)
+* Python - Linguagem de programação principal
+  * [Link do site Python](https://www.python.org/)
+  * [Link do curso da W3Schools](https://www.w3schools.com/python/default.asp)
+* HTML - Responsável pela estrutura da página web
+  * [Link do curso da W3Schools](https://www.w3schools.com/html/default.asp)
+* SQL - Linguagem para consultas no banco de dados
+  * [Link do curso da W3Schools](https://www.w3schools.com/sql/default.asp)
 
 ### Frameworks
 
-* Django - Framework Web
-  * [link do site do django](https://www.djangoproject.com/)
-  * [link do curso da w3schools](https://www.w3schools.com/django/index.php)
-
-### Bibliotecas
-
-* Jinja - Biblioteca Python para Templates
-    * [link do site do jinja](https://jinja.palletsprojects.com/en/3.1.x/)
+* Django - Framework web
+  * [Link do site do Django](https://www.djangoproject.com/)
+  * [Link do curso da w3schools](https://www.w3schools.com/django/index.php)
 
 ### Ferramentas
 
-* Git - Sistema de Controle de Versão - [link](https://git-scm.com/)
-* Github - Plataforma de Hospedagem de Códigos - [link](https://github.com/)
-* Visual Studio Code - IDE - [link](https://code.visualstudio.com/)
-* Pip - Gerenciador de Pacotes do Python - [link](https://pypi.org/project/pip/)
-* Venv - Ambiente Virtual do Python - [link](https://docs.python.org/pt-br/3/library/venv.html)
+* Visual Studio Code - Ambiente de desenvolvimento integrado - [link](https://code.visualstudio.com/)
+* Git - Sistema de controle de versão - [link](https://git-scm.com/)
+* Github - Plataforma de hospedagem e colaboração em projetos de software - [link](https://github.com/)
+* Pip - Gerenciador de pacotes do Python - [link](https://pypi.org/project/pip/)
+* Venv - Ambiente virtual do Python - [link](https://docs.python.org/pt-br/3/library/venv.html)
 * SQLite Online - SGBD - [link](https://sqliteonline.com/)
 * DB Browser for SQLite - SGBD - [link](https://sqlitebrowser.org/)
 
@@ -74,19 +67,19 @@ A seguir estão listados os principais recursos utilizados no desenvolvimento de
 
 <a href="#índice"><img align="right" width="15" height="15" src="./docs/up-arrow.png" alt="Voltar para topo"></a>
 
-A seguir estão destacados alguns dos principais fundamentos teóricos para entendimento desse tutorial.
+A seguir estão destacados alguns dos principais fundamentos teóricos para entendimento deste tutorial.
 
 ### Características do Django
 
-**1. Framework completo:** Django oferece tudo o que é necessário para o desenvolvimento de uma aplicação web, incluindo roteamento de URLs, mapeamento objeto-relacional (ORM), sistema de templates, autenticação, etc.
+**1. Framework completo:** Django oferece tudo o que é necessário para o desenvolvimento de uma aplicação web, incluindo roteamento de URLs, Mapeamento Objeto-Relacional (ORM), sistema de templates, autenticação, etc.
 
 **2. Administração automática:** Com base nos modelos definidos, Django gera automaticamente uma interface administrativa poderosa e personalizável, economizando tempo no desenvolvimento de funcionalidades administrativas.
 
-**3. ORM (Object-Relational Mapping):** O Django possui um ORM que facilita a interação com bancos de dados relacionais, permitindo que os desenvolvedores escrevam consultas em Python ao invés de SQL.
+**3. ORM (*Object-Relational Mapping*):** O Django possui um ORM que facilita a interação com bancos de dados relacionais, permitindo que os desenvolvedores escrevam consultas em Python ao invés de SQL.
 
 **4. Sistema de templates:** Django possui um sistema de templates eficiente que permite criar HTML dinâmico de forma organizada, utilizando lógica básica como laços e condicionais.
 
-**5. Segurança embutida:** O Django se preocupa com a segurança, oferecendo proteção contra ataques comuns como SQL Injection, Cross-site Scripting (XSS), Cross-site Request Forgery (CSRF), e Clickjacking.
+**5. Segurança embutida:** O Django se preocupa com a segurança, oferecendo proteção contra ataques comuns como SQL *Injection*, *Cross-site Scripting* (XSS), *Cross-site Request Forgery* (CSRF), e *Clickjacking*.
 
 **6. Escalabilidade:** Django é altamente escalável, podendo lidar com grandes volumes de tráfego, como em sites populares que utilizam o framework (por exemplo, Instagram e Pinterest).
 
@@ -134,7 +127,7 @@ Essa separação facilita a manutenção e escalabilidade da aplicação, permit
 
 ### Arquitetura MVT do Django
 
-O modelo MVT (Model-View-Template) é uma arquitetura usada no framework Django para desenvolvimento de aplicações web. Ele organiza a aplicação em três componentes principais:
+O modelo MVT (*Model-View-Template*) é uma arquitetura usada no framework Django para desenvolvimento de aplicações web. Ele organiza a aplicação em três componentes principais:
 
 * **Model (Modelo)**: Responsável pela definição da estrutura dos dados e a interação com o banco de dados. Ele define as classes que representam as tabelas e seus relacionamentos, além de métodos para realizar consultas e operações nos dados.
 
@@ -176,122 +169,99 @@ O Django suporta o conceito de Mapeamento Objeto-Relacional (ORM). Através do O
 
 <a href="#índice"><img align="right" width="15" height="15" src="./docs/up-arrow.png" alt="Voltar para topo"></a>
 
-O objetivo da aula é apresentar uma introdução ao framework python django. O Django é utilizado no desenvolvimento de páginas web do lado do servidor, ou seja, é uma ferramenta backend e funciona segundo a arquitetura MVT.
+O objetivo desta aula é apresentar uma introdução ao framework Python Django e como o mesmo se relaciona com a página HTML e o modelo de dados ORM. Aprenderemos a configurar o Django, a criar uma view, um template, um modelo, a acessar o ambiente adminstrativo e como realizar o cadastro, leitura, atualização e exclusão (CRUD) de dados. O Django é utilizado no desenvolvimento de páginas web do lado do servidor, ou seja, é uma ferramenta backend e funciona segundo a arquitetura MVT.
 
 ## Desenvolvimento do Projeto
 
 <a href="#índice"><img align="right" width="15" height="15" src="./docs/up-arrow.png" alt="Voltar para topo"></a>
 
-Os passos a seguir devem ser seguidos para alcançar o objetivo da aula.
+Siga os passos abaixo para alcançar o objetivo da aula.
 
-### Clonando o Repositório
+### Clonar o Repositório
 
-Inicialmente, clone o repositório da seguinte forma:
+Para iniciar, faça o clone do repositório com o seguinte comando:
 
 ```bash
 git clone https://github.com/ufla-prog-web/aula-django-01.git
 ```
 
-### Baixando o Repositório
+### Baixar o Repositório
 
-Caso deseje ao invês de clonar o repositório (método acima), baixe o repositório do [link](https://github.com/ufla-prog-web/aula-django-01) clicando em `Code` e `Download ZIP`.
+Como alternativa ao clone, você pode baixar diretamente o repositório acessando este [link](https://github.com/ufla-prog-web/aula-django-01). Clique em `Code` e, em seguida, em `Download ZIP`.
 
-### Instalando o Python
+### Instalar o Python
 
-Se necessário, instale o Python (testado na versão 3.10.12) [link](https://www.python.org/downloads/).
+Se necessário, instale o Python [link](https://www.python.org/downloads/).
 
-Verifique a versão instalada do Python (para ter certeza que tudo ocorreu bem):
+Verifique a versão instalada:
 
 ```bash
 python3 --version
 ```
 
-### Instalando o Pip
+### Instalar o Pip
 
-Se necessário, instale o pip (testado na versão 23.2.1):
+Se necessário, instale o pip:
 
 ```bash
 sudo apt install python3-pip
 ```
 
-Verifique a versão instalada do pip (para ter certeza que tudo ocorreu bem):
+Verifique a versão instalada:
 
 ```bash
-pip3 --version
+python3 -m pip --version
 ```
 
-### Abrindo o Visual Studio Code
+### Abrir o Visual Studio Code
 
-Abra a IDE Visual Studio Code na pasta `aula-django-01`.
+Abra o Visual Studio Code (VS Code) na pasta `aula-django-01`.
 
-**Dica:** Abra o arquivo `README.md` e clique em `Open Preview to the Side` para facilitar a construção da aplicação.
+**Dica:** abra o arquivo `README.md` e selecione a opção `Open Preview to the Side` para visualizar o tutorial lado a lado enquanto desenvolve a aplicação.
 
-**Dica:** Abra um terminal utilizando a IDE clicando em `Terminal` e `New Terminal`.
+**Dica:** abra um terminal utilizando a IDE clicando em `Terminal` e `New Terminal`.
 
-### Navegando até a Pasta do Projeto
+### Navegar até a Pasta do Projeto
 
-Inicialmente, navegue no terminal do Visual Studio Code até a pasta `aula-django-01` para realizar as instalações.
+No terminal do VS Code, acesse a pasta do projeto `aula-django-01`:
 
 ```bash
 cd aula-django-01
 ```
 
-### Criando o Ambiente Virtual
+### Criar o Ambiente Virtual
 
-Crie o ambiente virtual (venv) para isolar as instalações/dependências do Python:
-
-Unix/macOS
+Crie um ambiente virtual para isolar as dependências do projeto:
 
 ```bash
 python3 -m venv venv
 ```
 
-Windows
+**Observação:** no exemplo acima, o segundo nome `venv` é o nome que escolhemos para o nosso ambiente virtual (isso pode ser alterado).
 
-```bash
-py -m venv venv
-```
+### Ativar o Ambiente Virtual
 
-**OBS:** no comando acima, o segundo nome `venv` é o nome que escolhemos para o nosso ambiente virtual (isso pode ser alterado).
-
-### Ativando o Ambiente Virtual
-
-Ative o ambiente virtual (venv) no seu computador utilizando o comando abaixo:
-
-**Sistema Operacional:** Unix/macOS
+Ative o ambiente virtual no seu computador utilizando o comando:
 
 ```bash
 source venv/bin/activate
 ```
 
-**Sistema Operacional:** Windows
-
-```bash
-Set-ExecutionPolicy Unrestricted -Scope Process
-.\venv\Scripts\activate.bat
-```
-
-Quando desejar sair do ambiente virtual, basta digitar:
+Para sair do ambiente virtual:
 
 ```bash
 deactivate
 ```
 
-### Instalando o Django
+### Instalar o Django
 
-Instale o django dentro do ambiente virtual criado (testado na versão 5.0.3):
-
-```bash
-pip3 install django
-```
-
-ou
+Instale o Django dentro do ambiente virtual criado (testado na versão 5.0):
 
 ```bash
-python -m pip install Django
+python3 -m pip install django
 ```
 
-Verifique a versão instalada do django (para ter certeza que tudo ocorreu bem):
+Verifique a versão instalada:
 
 ```bash
 django-admin --version
@@ -303,39 +273,42 @@ ou
 python3 -m django --version
 ```
 
-**OBS:** Caso o terminal não encontre o django-admin, execute o seguinte comando (utilizado geralmente quando não se utiliza o venv no laboratório DCC07):
+**Observação:** caso o terminal não encontre o django-admin, execute o seguinte comando (utilizado geralmente quando não se utiliza o venv no laboratório DCC07):
 
 ```bash
 export PATH=$PATH:~/.local/bin
 ```
 
-### Criando o Projeto no Django
+### Criar o Projeto no Django
 
-Crie um projeto em django utilizando o comando abaixo:
+Crie uma pasta chamada `code` dentro do projeto `aula-django-01`:
+
+Crie um projeto em Django utilizando o comando abaixo:
 
 ```bash
+cd code
 django-admin startproject mysite .
 ```
 
-**OBS:** O ponto no comando acima informa ao Django para não criar uma pasta com nome `mysite` dentro de uma pasta `mysite`. Isso evita ter que ficar navegando entre pastas.
+**Observação:** o ponto no comando acima informa ao Django para não criar uma pasta com nome `mysite` dentro de uma outra pasta `mysite`. Isso evita ter que ficar navegando entre pastas.
 
-### Executando o Projeto
+### Executar o Projeto
 
-Inicie a execução do projeto django criado utilizando o comando abaixo:
+Inicie a execução do projeto Django:
 
 ```bash
 python3 manage.py runserver
 ```
 
-**Explicação:** O comando acima é usado no Django para iniciar um servidor de desenvolvimento local. Ele é uma parte fundamental do processo de desenvolvimento web com o Django, pois permite que você execute e teste sua aplicação web em um ambiente de desenvolvimento local antes de implantá-la em um servidor web de produção. Ele inicia um servidor HTTP embutido no Django que pode lidar com solicitações HTTP. Por padrão, o servidor de desenvolvimento escuta na porta 8000, mas você pode especificar uma porta diferente como argumento opcional, por exemplo, `python3 manage.py runserver 8081`.
+**Explicação:** o comando acima é usado no Django para iniciar um servidor de desenvolvimento local. Ele é uma parte fundamental do processo de desenvolvimento web com o Django, pois permite que você execute e teste sua aplicação web em um ambiente de desenvolvimento local antes de implantá-la em um servidor web de produção. Ele inicia um servidor HTTP embutido no Django que pode lidar com solicitações HTTP. Por padrão, o servidor de desenvolvimento escuta na porta 8000, mas você pode especificar uma porta diferente como argumento opcional, por exemplo, `python3 manage.py runserver 8081`.
 
-Acesse através do navegdor web a página [http://127.0.0.1:8000/](http://127.0.0.1:8000/). Uma página padrão do django deve aparecer (semelhante a mostrada abaixo).
+Acesse no navegdor a página [http://127.0.0.1:8000/](http://127.0.0.1:8000/). A página padrão do Django deverá ser exibida (semelhante a imagem abaixo).
 
 ![Tela Padrão Django](./docs/tela-django-inicial.png)
 
-### Criando um Aplicativo
+### Criar um Aplicativo
 
-Execute o comando abaixo para criar um aplicativo chamado `myapp` dentro do projeto `mysite`:
+Crie um aplicativo (app) chamado `myapp` dentro do projeto:
 
 ```bash
 django-admin startapp myapp
@@ -347,7 +320,7 @@ O comando abaixo faz a mesma coisa:
 python3 manage.py startapp myapp
 ```
 
-**Explicação:** O comando acima é usado para criar uma nova aplicação dentro de um projeto Django. Após executar esse comando, você terá uma nova pasta chamada `myapp` dentro do seu projeto Django, contendo uma estrutura inicial de arquivos Python que você pode começar a editar para construir a lógica da sua aplicação. Uma aplicação (ou app) é um componente reutilizável e modular que realiza uma função específica dentro de um projeto Django. Um projeto Django pode conter várias aplicações, cada uma projetada para lidar com uma parte específica da funcionalidade do site. Cada aplicação é composta por:
+**Explicação:** o comando acima é usado para criar uma nova aplicação dentro de um projeto Django. Após executar esse comando, você terá uma nova pasta chamada `myapp` dentro do seu projeto Django, contendo uma estrutura inicial de arquivos Python que você pode começar a editar para construir a lógica da sua aplicação. Uma aplicação (ou app) é um componente reutilizável e modular que realiza uma função específica dentro de um projeto Django. Um projeto Django pode conter várias aplicações, cada uma projetada para lidar com uma parte específica da funcionalidade do site. Cada aplicação é composta por:
 
 * **Models:** Definem a estrutura e o comportamento dos dados. Os modelos são utilizados para interagir com o banco de dados e representar os objetos do mundo real dentro do sistema.
 
@@ -359,21 +332,21 @@ python3 manage.py startapp myapp
 
 * **URLs:** Mapeiam as URLs do site para as views correspondentes. Cada aplicação geralmente tem seu próprio arquivo urls.py para definir os padrões de URL específicos dessa aplicação.
 
-### Entendendo a Estrutura de Diretórios do Django
+### Conhecer a Estrutura de Diretórios do Django
 
-A estrutura de diretórios de um projeto Django é organizada de maneira a separar os diferentes componentes da aplicação, facilitando o desenvolvimento e a manutenção. A seguir, temos a estrutura geral de diretórios de um projeto feito em Django. 
+A estrutura de diretórios de um projeto Django é organizada de maneira a separar os diferentes componentes da aplicação, facilitando o desenvolvimento e a manutenção. A seguir, temos a estrutura geral de diretórios de um projeto feito em Django.
 
 ```text
-myproject/
+mysite/
 │
 ├── manage.py
-├── myproject/
+├── mysite/
 │   ├── __init__.py
 │   ├── asgi.py
 │   ├── settings.py
 │   ├── urls.py
 │   └── wsgi.py
-├── app1/
+├── myapp1/
 │   ├── migrations/
 │   ├── templates/
 │   ├── __init__.py
@@ -383,7 +356,7 @@ myproject/
 │   ├── views.py
 │   ├── urls.py
 │   └── tests.py
-├── app2/
+├── myapp2/
 │   ├── migrations/
 │   ├── templates/
 │   ├── __init__.py
@@ -397,13 +370,13 @@ myproject/
 ```
 
 * **manage.py**: Um script que permite interagir com o projeto Django a partir da linha de comando. Ele é usado para executar comandos como iniciar o servidor, migrar o banco de dados e criar superusuários.
-* **myproject/**: Esta pasta contém os arquivos de configuração e o núcleo do projeto Django. Normalmente, o nome da pasta do projeto coincide com o nome do projeto. Aqui estão os arquivos comuns:
+* **mysite/**: Esta pasta contém os arquivos de configuração e o núcleo do projeto Django. Normalmente, o nome da pasta do projeto coincide com o nome do projeto. Aqui estão os arquivos comuns:
   * **__init__.py**: Indica ao Python que essa pasta deve ser tratada como um pacote.
   * **asgi.py**: Ponto de entrada para servidores ASGI (usado para rodar a aplicação em modo assíncrono).
   * **settings.py**: Arquivo de configuração onde você define parâmetros como a conexão com o banco de dados, apps instalados, middleware, etc.
   * **urls.py**: Arquivo que define os mapeamentos de URL do projeto para as views.
   * **wsgi.py**: Ponto de entrada para servidores WSGI (usado para rodar a aplicação em modo síncrono).
-* **app/**: O Django incentiva o uso de uma abordagem modular, onde a funcionalidade de uma aplicação é dividida em "apps" individuais. Cada app tem sua própria pasta dentro do projeto e contém a lógica de uma parte específica do sistema.
+* **myapp/**: O Django incentiva o uso de uma abordagem modular, onde a funcionalidade de uma aplicação é dividida em "apps" individuais. Cada app tem sua própria pasta dentro do projeto e contém a lógica de uma parte específica do sistema.
   * **migrations/**: Contém arquivos de migração que Django usa para gerenciar o banco de dados. Cada migração reflete uma mudança no modelo de dados.
   * **templates/**: Essa pasta contém os arquivos HTML que serão renderizados pelas views. Cada app pode ter sua própria pasta `templates/` ou você pode criar uma pasta `templates/` global na raiz do projeto.
   * **__init__.py**: Marca a pasta como um pacote Python.
@@ -413,11 +386,11 @@ myproject/
   * **views.py**: Contém as funções ou classes que processam as requisições e retornam as respostas.
   * **urls.py**: Define as rotas específicas para as views deste app.
   * **tests.py**: Contém testes automatizados para a aplicação.
-  * **static/**: Essa pasta contém arquivos estáticos, como CSS, JavaScript e imagens. Os arquivos dentro de `static/` são usados para a apresentação visual da aplicação.
+* **static/**: Essa pasta contém arquivos estáticos, como CSS, JavaScript e imagens. Os arquivos dentro de `static/` são usados para a apresentação visual da aplicação.
 
-### Criando a Primeira View no Django
+### Criar a Primeira View
 
-Primeiramente, edite o arquivo de `views.py` (na pasta `myapp`) e coloque o seguinte conteúdo:
+Edite o arquivo de `myapp/views.py` e coloque o conteúdo:
 
 ```python
 from django.shortcuts import render
@@ -427,7 +400,7 @@ def teste(request):
     return HttpResponse("Olá Mundo!")
 ```
 
-Em seguida, crie um arquivo nomeado `urls.py` na mesma pasta do arquivo `views.py` e digite o código abaixo:
+Crie um arquivo `urls.py` na pasta `myapp` com o conteúdo:
 
 ```python
 from django.urls import path
@@ -438,13 +411,13 @@ urlpatterns = [
 ]
 ```
 
-O comando acima, de forma geral, cadastra uma nova rota na sua aplicação. Quando o usuário acessar a rota ou URL [http://127.0.0.1:8000/teste/](http://127.0.0.1:8000/teste/), o método views.teste será chamado.
+Essa configuração registra a rota `/teste/` que chama `views.teste`. Assim, quando o usuário acessar a rota ou URL [http://127.0.0.1:8000/teste/](http://127.0.0.1:8000/teste/), o método `views.teste` será executado.
 
-Existe um arquivo chamado `urls.py` na pasta `mysite`, abra esse arquivo e coloque o seguinte conteúdo nesse arquivo.
+Abra o arquivo chamado `urls.py` da pasta `mysite` e inclua as rotas do app, como abaixo:
 
 ```python
 from django.contrib import admin
-from django.urls import include, path
+from django.urls import path, include
 
 urlpatterns = [
     path('', include('myapp.urls')),
@@ -452,25 +425,25 @@ urlpatterns = [
 ]
 ```
 
-Em seguida, execute o projeto django (veja se está tudo funcionando):
+Inicie o servidor de desenvolvimento:
 
 ```bash
 python3 manage.py runserver
 ```
 
-Acesse a página [http://127.0.0.1:8000](http://127.0.0.1:8000). Deverá aparecer uma mensagem de erro (*Page not found*) nesta página.
-
-Por fim, acesse a URL: [http://127.0.0.1:8000/teste/](http://127.0.0.1:8000/teste/`) e analise o resultado.
+* Acesse [http://127.0.0.1:8000](http://127.0.0.1:8000). A página exibirá **Page not found (404)**, pois não há rota para `/`.
+* Acesse [http://127.0.0.1:8000/teste/](http://127.0.0.1:8000/teste/). A mensagem **"Olá, mundo!"** deverá ser exibida.
+* Para encerrar o servidor: Ctrl+C.
 
 ### Atividade 1 - Crie uma Nova View e Nova Rota
 
-Utilizando o exemplo anterior crie uma nova view e uma nova rota para a sua aplicação. Em seguida, faça os testes para verificar se tudo funcionou corretamente.
+Utilizando o exemplo anterior como base, crie uma nova view e uma nova rota para a sua aplicação. Em seguida, faça testes para verificar se tudo funcionou corretamente.
 
-### Criando o Primeiro Template no Django
+### Criar o Primeiro Template
 
 Crie uma pasta `templates` dentro da pasta `myapp` e crie um arquivo HTML chamado `paginateste.html`.
 
-Abra o arquivo HTML e insira o seguinte conteúdo:
+Abra o arquivo `myapp/templates/myapp/paginateste.html` e insira o conteúdo:
 
 ```html
 <!DOCTYPE html>
@@ -500,7 +473,7 @@ def teste(request):
 
 ```
 
-Para poder trabalhar com coisas mais complicadas do que "Hello World!", temos que dizer ao Django que um novo aplicativo foi criado. Isso é feito no arquivo `settings.py` da pasta `mysite`. Procure a lista `INSTALLED_APPS[]` e adicione o aplicativo `myapp` que foi criado. Veja o exemplo abaixo:
+Para poder trabalhar com coisas mais complicadas do que **"Olá Mundo!"**, temos que dizer ao Django que um novo aplicativo foi criado. Isso é feito no arquivo `mysite/settings.py`. Procure a lista `INSTALLED_APPS[]` e adicione o aplicativo `myapp` que foi criado. Veja o exemplo abaixo:
 
 ```python
 INSTALLED_APPS = [
@@ -510,35 +483,35 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'myapp',                      # inclua o app criado aqui
+    'myapp',                      # registre o app criado aqui
 ]
 ```
 
-Em seguida, execute este comando:
+Em seguida, execute o comando abaixo para aplicar migrações:
 
 ```bash
 python3 manage.py migrate
 ```
 
-**OBS:** Este comando aplica as migrações, ou seja, atualiza o esquema do banco de dados de acordo com as mudanças nos modelos.
+**Observação:** este comando atualiza o esquema do banco de dados conforme os apps instalados.
 
-Em seguida, execute o projeto django (veja se está tudo funcionando):
+Inicie o servidor de desenvolvimento:
 
 ```bash
 python3 manage.py runserver
 ```
 
-Por fim, acesse a URL [http://127.0.0.1:8000/teste/](http://127.0.0.1:8000/teste/`) e analise o resultado.
+Acesse: [http://127.0.0.1:8000/teste/](http://127.0.0.1:8000/teste/`). A página criada deverá ser exibida.
 
 ### Atividade 2 - Crie uma Nova Página
 
-Utilizando o exemplo anterior crie uma nova página HTML e atualize a view na sua aplicação que você mesmo havia criado na Atividade 1 feita anteriormente. Em seguida, faça os testes para verificar se tudo funcionou corretamente.
+Utilizando o exemplo anterior como base, crie uma nova página HTML e atualize a view na sua aplicação que você mesmo havia criado na Atividade 1 feita anteriormente. Em seguida, faça testes para verificar se tudo funcionou corretamente.
 
-### Passando Parâmetros para o Template do Django
+### Passar Parâmetros para o Template
 
-Agora, iremos ver como podemos passar alguns parâmetros do Python para o template HTML utilizando tags do Django (através da biblioteca [Jinja](https://jinja.palletsprojects.com/en/3.1.x/)).
+Agora, iremos passar parâmetros do Python para o template HTML utilizando tags do Django. Por padrão, o Django utiliza a *Django Template Language* (DTL) que é uma forma de templates similar a biblioteca [Jinja](https://jinja.palletsprojects.com/en/3.1.x/). Com essa linguagem de templates é possível executar lógica de programação, como executar instruções condicional (**if** ) e repetição (**for**).
 
-Para isso, crie um arquivo HTML com nome `testeparametros.html` na pasta `templates` com o seguinte conteúdo:
+Crie o arquivo `myapp/templates/testeparametros.html` com o conteúdo:
 
 ```html
 <!DOCTYPE html>
@@ -548,8 +521,8 @@ Para isso, crie um arquivo HTML com nome `testeparametros.html` na pasta `templa
     <title>Aplicação Django</title>
   </head>
   <body>
-    <h1>Django: Tags de Templates</h1>
-    <p>Neste exemplos utilizamos as tags de templates do Django (Jinja)</p>
+    <h1>Tags de Templates do Django</h1>
+    <p>Exemplo com tags para variáveis:</p>
     <ul>
         <li><b>Nome:</b> {{ nome }} </li>
         <li><b>Idade:</b> {{ idade }} </li>
@@ -557,29 +530,48 @@ Para isso, crie um arquivo HTML com nome `testeparametros.html` na pasta `templa
         <li><b>Telefone:</b> {{ telefone }} </li>
         <li><b>Usuário Ativo:</b> {{ usuarioativo }} </li>
     </ul>
+    <p>Exemplo com tags para condicional:</p>
+    {% if condicional == 1 %}
+        <b>Programação</b>
+    {% elif condicional == 2 %}
+        <b>Web</b>
+    {% else %}
+        <b>UFLA</b>
+    {% endif %}
+    <p>Exemplo com tags para repetição:</p>
+    <ul>
+        {% for x in numeros %}
+            <li>{{ x }}</li>
+        {% endfor %}
+    </ul>
   </body>
 </html>
 ```
 
-Em seguida, edite o arquivo `views.py` na pasta `myapp` e coloque o seguinte conteúdo ao final:
+O template Django pode renderizar variáveis ​​colocando-as entre chaves `{{ }}`. Para executar comandos como **if** e **for** precisamos colocá-los entre chaves `{% %}`. A sintaxe para isso é semelhante a da linguagem Python.
+
+Edite o arquivo `myapp/views.py` e coloque o conteúdo ao final:
 
 ```python
 ...
 
 def testeparametros(request):
-    template = loader.get_template('testeparametros.html')
     context = {
         "nome": "José Silva",
         "idade": 30,
         "email": "jose.silva@email.com",
         "telefone": "3333-1234",
-        "usuarioativo": True
+        "usuarioativo": True,
+        "condicional": 3,
+        'numeros': [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
     }
+    template = loader.get_template('testeparametros.html')
     return HttpResponse(template.render(context, request))
 ```
 
-Em seguida, edite o arquivo nomeado `urls.py` na mesma pasta do arquivo `views.py` e digite o código abaixo:
+O código acima criou um dicionário chamado `context` em que diversas chaves e valores foram definidas. Esses dados foram passados para o código HTML através da função `template.render()`. Em seguida, o template (HTML) pega os dados para exibi-los. Nesse exemplo, os dados vieram de um dicionário do Python, no futuro poderão vir de um Banco de Dados.
 
+Edite o arquivo `myapp/urls.py` e adicione a linha abaixo:
 
 ```python
 ...
@@ -590,25 +582,19 @@ urlpatterns = [
 ]
 ```
 
-Em seguida, execute o projeto django:
+Acesse: [http://127.0.0.1:8000/testeparametros/](http://127.0.0.1:8000/testeparametros/`) e verifique a renderização dos valores.
 
-```bash
-python3 manage.py runserver
-```
+### Atividade 3 - Passar Novos Parâmetros
 
-Por fim, acesse a URL [http://127.0.0.1:8000/testeparametros/](http://127.0.0.1:8000/testeparametros/`) e analise o resultado.
+Altere o método `testeparametros` no arquivo `views.py` para passar dois novos parâmetros para o tamplate. Dessa maneira, é necessário alterar também o arquivo `testeparametros.html` para receber os dados passados e imprimi-los na tela. Em seguida, faça testes para verificar se tudo funcionou corretamente.
 
-### Atividade 3 - Passando Novos Parâmetros
+### Criar o Primeiro Modelo
 
-Altere o método `testeparametros` no arquivo `views.py` para passar dois novos parâmetros para o tamplate. Dessa maneira, é necessário alterar também o arquivo `testeparametros.html` para receber os dados passados e imprimi-los na tela.
+Até esse momento, construímos a aplicação web com interface, com URLs e algum processamento, mas não trabalhamos com Banco de Dados (BD). Os dados estavam inseridos diretamente ("fixos") no código.
 
-### Criando o Primeiro Modelo no Django
+A partir de agora, os dados serão persistidos em BD por meio de modelos (tabelas). Uma tabela chamada Livro será criada no BD SQLite disponível no Django. No Django, uma tabela é criada através da implementação de uma classe (ORM).
 
-Até esse momento fizemos a nossa aplicação web com interface, com URLs e algum processamento, mas não trabalhamos com Banco de Dados. Os dados estavam inseridos diretamente no código.
-
-Agora, iremos criar o nosso primeiro modelo, um Livro no Banco de Dados SQLite disponível no Django. No Django, os dados são criados em objetos, chamados Modelos, que na verdade são tabelas em um banco de dados.
-
-Primeiramente, iremos criar uma classe chamada `Livro`. Para isso abra o arquivo `models.py` na pasta `myapp` e digite o seguinte conteúdo:
+Assim, vamos criar uma classe chamada `Livro`. Para isso, edite o arquivo `myapp/models.py` e digite o conteúdo:
 
 ```python
 from django.db import models
@@ -621,15 +607,15 @@ class Livro(models.Model):
 
 O código acima irá criar uma Tabela chamada Livro no BD SQLite. Os campos `nome` e `autor` são campos de texto e estão configurados para ter no máximo 255 caracteres. O campo `ano` é um campo numérico inteiro.
 
-**OBS:** Quando criamos o projeto Django, obtivemos um banco de dados SQLite vazio. Ele estava na raiz da pasta `aula-django-01` e possui o nome de arquivo `db.sqlite3`. Por padrão, todos os modelos criados no projeto Django serão criados como tabelas neste banco de dados.
+**Observação:** quando criamos o projeto Django, obtivemos um banco de dados SQLite vazio. Ele estava na raiz da pasta `aula-django-01/code/` e possui o nome de arquivo `db.sqlite3`. Por padrão, todos os modelos criados no projeto Django serão criados como tabelas neste banco de dados.
 
-Em seguida, execute o código abaixo para que seja criado a tabela Livro no banco de dados de fato:
+Execute o comando abaixo para que seja criado a tabela Livro no banco de dados de fato:
 
 ```bash
 python3 manage.py makemigrations myapp
 ```
 
-O que resultará nesta saída:
+O que resultará na saída:
 
 ```bash
 Migrations for 'myapp':
@@ -647,7 +633,7 @@ Execute o comando de migração:
 python3 manage.py migrate
 ```
 
-O que resultará nesta saída:
+O que resultará na saída:
 
 ```bash
 Operations to perform:
@@ -656,19 +642,36 @@ Running migrations:
   Applying myapp.0001_initial... OK
 ```
 
-### Acessando o Ambiente Administrativo do Django
+Você pode visualizar as instruções SQL que foram executadas na migração acima. Basta executar este comando, com o número da migração:
+
+```bash
+python3 manage.py sqlmigrate myapp 0001
+```
+
+O que resultará nesta saída:
+
+```sql
+BEGIN;
+--
+-- Create model Livro
+--
+CREATE TABLE "myapp_livro" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "nome" varchar(255) NOT NULL, "autor" varchar(255) NOT NULL, "ano" integer NOT NULL);
+COMMIT;
+```
+
+### Acessar o Ambiente Administrativo
 
 O Django Admin é uma ferramenta ótima do Django, na verdade é uma interface de usuário CRUD (Criar, Ler, Atualizar, Excluir) para todos os seus modelos!
 
-Para entrar na interface do usuário administrativo, inicie o servidor com este comando:
+Para entrar na interface do usuário administrativo, inicie o servidor:
 
 ```bash
 python3 manage.py runserver
 ```
 
-Na janela do navegador, digite na barra de endereço [127.0.0.1:8000/admin/](127.0.0.1:8000/admin/)
+Acesse: [127.0.0.1:8000/admin/](127.0.0.1:8000/admin/)
 
-A razão pela qual esta URL vai para a página de login do administrador do Django pode ser encontrada no arquivo `urls.py` do seu projeto:
+A razão pela qual esta URL vai para a página de login do administrador do Django pode ser encontrada no arquivo `mysite/urls.py`:
 
 ```python
 from django.contrib import admin
@@ -682,9 +685,9 @@ urlpatterns = [
 
 A lista `urlpatterns[]` recebe solicitações na rota `admin/` e as envia para `admin.site.urls`, que faz parte de um aplicativo integrado que vem com o Django e contém muitas funcionalidades e interfaces de usuário, sendo uma delas a interface de usuário de login.
 
-### Criando um Usuário no Django
+### Criar um Superusuário
 
-Para poder fazer login no ambiente administrativo do Django, precisamos criar um usuário. Isso é feito digitando este comando:
+Para poder fazer login no ambiente administrativo do Django, precisamos criar um usuário. Isso é feito com o comando:
 
 ```bash
 python3 manage.py createsuperuser
@@ -703,35 +706,29 @@ This password is too common.
 Bypass password validation and create user anyway? [y/N]: y
 ```
 
-**OBS:** Aqui você deve inserir: nome de usuário, endereço de e-mail (você pode simplesmente deixar em branco ou escolher um endereço de e-mail falso) e senha. Em meu caso coloquei usuário `admin` email em branco e senha `admin`. 
-
-Minha senha não atendeu aos critérios, mas este é um ambiente de teste, e opto por criar usuário mesmo assim, digitando `y` gerando assim a saída:
+**Observação:** você deve inserir: nome de usuário, e-mail (opcional) e senha. Para testes, sugiro colocar: usuário `admin`, email em branco e senha `admin`. Caso a senha não atenda aos critérios, o Django oferece a opção de prosseguir mesmo assim digitando `y` gerando assim a saída:
 
 ```bash
 Superuser created successfully.
 ```
 
-Agora, reinicie o servidor:
+Reinicie o servidor:
 
 ```bash
 python3 manage.py runserver
 ```
 
-Na janela do navegador, digite na barra de endereço [127.0.0.1:8000/admin/](127.0.0.1:8000/admin/)
-
-Preencha o formulário com o nome de usuário e senha corretos (`admin` e `admin`):
+Acesse: [127.0.0.1:8000/admin/](127.0.0.1:8000/admin/). Preencha o formulário com o nome de usuário e senha.
 
 Na tela aberta você pode Criar, Ler, Atualizar e Excluir grupos e usuários, mas onde está o modelo de Livro?
 
 O modelo Livro está faltando, como deveria estar. Você tem que informar ao Django quais modelos devem estar visíveis na interface administrativa.
 
-### Incluindo o Modelo Livro na Interface Administrativa
+### Incluir o Modelo Livro na Interface Administrativa
 
-Para incluir o modelo Livro na interface administrativa, temos que dizer ao Django que este modelo deve estar visível na interface administrativa.
+Para incluir o modelo Livro na interface administrativa, temos que dizer ao Django que este modelo deve estar visível na interface administrativa. Isso é feito em um arquivo chamado `admin.py` que está localizado na pasta do seu aplicativo.
 
-Isso é feito em um arquivo chamado `admin.py`, e está localizado na pasta do seu aplicativo, que no nosso caso é a pasta `myapp`.
-
-Abra-o, o mesmo deve estar assim:
+Abra o arquivo `myapp/admin.py`:
 
 ```python
 from django.contrib import admin
@@ -739,7 +736,7 @@ from django.contrib import admin
 # Register your models here.
 ```
 
-Insira algumas linhas aqui para tornar o modelo Livro visível na página de administração:
+Insira as linhas abaixo para tornar o modelo Livro visível na página de administração:
 
 ```python
 from django.contrib import admin
@@ -748,15 +745,17 @@ from .models import Livro
 admin.site.register(Livro)
 ```
 
-Agora, acesse o endereço [127.0.0.1:8000/admin/](127.0.0.1:8000/admin/) e analise o resultado.
+Acesse: [127.0.0.1:8000/admin/](127.0.0.1:8000/admin/) e analise o resultado.
 
 ### Atividade 4 - Cadastro de Livros
 
-No ambiente administrativo, vá em Livros e clique em Add Livro, em seguida, cadastre três livros quaisquer. Em seguida, faça testes para realizar a exclusão de um livro. Em seguida, faça testes para realizar a atualização de algum dado em algum livro.
+Realize o cadastro de livros no ambiente administrativo. Para isso, vá em Livros e clique em Add Livro. Cadastre três livros quaisquer. Em seguida, realize a exclusão de um livro. Logo após, realize a atualização de alguma informação em algum livro.
 
-### Visualizando o Modelo de Dados
+### Visualizar o Modelo de Dados
 
-Existem diversas ferramentas que podem ser utilizadas para ver o banco de dados do modelo criado. Uma dessas ferramentas é o [site SQLite Online](https://sqliteonline.com/). Acesse esse site e carregue o banco de dados chamado `db.sqlite3` localizado na raiz do projeto.
+Existem diversas ferramentas que podem ser utilizadas para ver o banco de dados criado `db.sqlite3`. A seguir será apresentado duas ferramentas: [SQLite Online](https://sqliteonline.com/) e [DB Browser for SQLite](https://sqlitebrowser.org/).
+
+O site [SQLite Online](https://sqliteonline.com/) oferece uma forma rápida e prática de visualizar dados sem a necessidade de instalação adicional. Acesse esse site e carregue o BD chamado `db.sqlite3` localizado na raiz do projeto.
 
 Execute o comando abaixo nessa ferramenta para listar os livros que você cadastrou utilizando o ambiente administrativo.
 
@@ -764,17 +763,151 @@ Execute o comando abaixo nessa ferramenta para listar os livros que você cadast
 SELECT * FROM myapp_livro;
 ```
 
-Uma outra ferramenta que podemos utilizar é o [DB Browser for SQLite](https://sqlitebrowser.org/). Utilize essa ferramenta para abrir o arquivo do BD chamado `db.sqlite3` que está na raiz do projeto e assim ver as modificações no modelo.
+O software [DB Browser for SQLite](https://sqlitebrowser.org/) oferece uma forma simples e prática de visualizar dados, mas precisa de instalação adicional. Utilize essa ferramenta para abrir o arquivo do BD chamado `db.sqlite3`. Para ver os dados de uma tabela você pode ir na aba `Navegar dados` ou então `Executar SQL` e executar a SQL acima.
 
-### Atividade 5 - Crie um Outro Modelo 
+**Observação:** repare que o nome físico da tabela segue o padrão `<app>_<modelo>`, por exemplo `myapp_livro`.
 
-Crie um outro modelo (tabela) em sua aplicação e registre esse modelo. Acesse o ambiente administrativo e realize a inclusão de dados no modelo criado.
+### Atividade 5 - Crie um Novo Modelo
+
+Crie um novo modelo (tabela) em sua aplicação e registre-o no Admin. Acesse o ambiente administrativo e inclua de dados no modelo criado.
+
+**Observação:** após a criação do novo modelo será necessário executar os comandos abaixo:
+
+```bash
+python3 manage.py makemigrations myapp
+python3 manage.py migrate
+```
+
+### Melhorar Visualização do Modelo
+
+Atualmente, o ambiente administrativo não está exibindo os dados dos modelos de forma adequada para o usuário. Veja isso, em Livros, em que temos "Livro object (1)", "Livro membro (2)" etc. O usuário geralmente não deseja ver os dados dessa forma. Seria melhor exibir "nome", "autor" e "ano".
+
+Para mudar isso para um formato mais fácil de ler, temos duas opções:
+
+* Alterar a função de representação de string `__str__()` do modelo de Livro.
+* Definir a propriedade `list_details` do modelo de Livro.
+
+Para alterar utilizando a primeira forma, devemos alterar a função de representação de string `__str__()` do modelo de Livro. Para isso, faça o seguinte no arquivo `myapp/models.py`:
+
+```python
+from django.db import models
+
+class Livro(models.Model):
+    nome = models.CharField(max_length=255)
+    autor = models.CharField(max_length=255)
+    ano = models.IntegerField()
+
+    def __str__(self):                       # função adicionada
+        return f"{self.nome} - {self.autor} - {self.ano}" 
+...
+```
+
+Acesse: [127.0.0.1:8000/admin/](127.0.0.1:8000/admin/) na tela de Livros e analise o resultado.
+
+Para alterar utilizando a segunda forma (RECOMENDADA), devemos definir a propriedade `list_display` do arquivo `myapp/admin.py`. Primeiro, crie uma classe `LivroAdmin()` e especifique a tupla `list_display`, conforme abaixo:
+
+```python
+from django.contrib import admin
+from .models import Livro
+
+class LivroAdmin(admin.ModelAdmin):         # função adicionada
+    list_display = ("nome", "autor", "ano")
+
+admin.site.register(Livro, LivroAdmin)      # classe adicionada
+...
+```
+
+Acesse: [127.0.0.1:8000/admin/](127.0.0.1:8000/admin/) na tela de Livros e analise o resultado.
+
+### Atividade 6 - Ajuste a Visualização para Outros Modelos
+
+Ajuste a visualização das colunas de dados para os outros modelos criados em sua aplicação e registre-o no Admin. Acesse o ambiente administrativo para visualizar os ajustes realizados.
+
+### Melhorar Nomeação de Campos do Modelo
+
+Os nomes das colunas exibidos na interface administrativa estão pouco intuitivas, pois foram capturadas automaticamente pelo Django. O correto é nomear adequadamente cada uma das colunas.
+
+Para isso, edite o arquivo `myapp/models.py` e digite o conteúdo:
+
+```python
+from django.db import models
+
+class Livro(models.Model):
+    nome = models.CharField("Título", max_length=255) # alteração 
+    autor = models.CharField("Autor", max_length=255) # alteração
+    ano = models.IntegerField("Ano de publicação")    # alteração
+    def __str__(self):
+        return f"{self.nome} - {self.autor} - {self.ano}" 
+...
+```
+
+No código acima foi incluído mais um parâmetro nos campos da tabela. O campo `nome` passou a ser chamado de "Título" ao ser exibido na interface administrativa. Por sua vez, o campo `ano` virou "Ano de publicação".
+
+### Atividade 7 - Ajuste os Nomes de Outros Modelos
+
+Ajuste os nomes dos campos para os outros modelos criados em sua aplicação. Acesse o ambiente administrativo para visualizar os ajustes realizados.
+
+### Adicionar Campos no Modelo Livro
+
+Nesta etapa, iremos adicionar um campo (editora) a uma tabela (Livro) depois que ela for criada. Para isso, abra o arquivo `myapp/models.py` e inclua a linha destacada:
+
+```python
+...
+class Livro(models.Model):
+    nome = models.CharField("Título", max_length=255)
+    autor = models.CharField("Autor", max_length=255)
+    ano = models.IntegerField("Ano de publicação")
+    editora = models.CharField("Editora", max_length=255)   # linha incluída
+    ...
+```
+
+Esta é uma mudança na estrutura do Modelo e, portanto, temos que fazer uma migração para informar ao Django que ele precisa atualizar o banco de dados:
+
+```bash
+python3 manage.py makemigrations myapp
+```
+
+O comando acima resultará em um prompt, porque tentamos adicionar campos que não podem ser nulos a uma tabela que já contém registros.
+
+Como você pode ver, o Django pergunta se queremos fornecer aos campos um valor específico ou se queremos parar a migração e corrigi-la no modelo:
+
+```text
+It is impossible to add a non-nullable field 'editora' to livro without specifying a default. This is because the database needs something to populate existing rows.
+Please select a fix:
+ 1) Provide a one-off default now (will be set on all existing rows with a null value for this column)
+ 2) Quit and manually define a default value in models.py.
+Select an option: 
+```
+
+Selecione a opção 2, abra o arquivo `myapp/models.py` novamente e permita valores `NULL` para o novo campo (editora):
+
+```python
+...
+class Livro(models.Model):
+    nome = models.CharField("Título", max_length=255)
+    autor = models.CharField("Autor", max_length=255)
+    ano = models.IntegerField("Ano de publicação")
+    editora = models.CharField("Editora", max_length=255, null=True)   # linha atualizada
+    ...
+```
+
+E faça a migração mais uma vez:
+
+```bash
+python3 manage.py makemigrations myapp
+```
+
+Execute o comando migrate:
+
+```bash
+python3 manage.py migrate
+```
 
 ## Créditos e Referências
 
 <a href="#índice"><img align="right" width="15" height="15" src="./docs/up-arrow.png" alt="Voltar para topo"></a>
 
-Este tutorial foi inspirado nos seguintes recursos:
+Este tutorial foi inspirado nos seguintes materiais:
 
-* [Documentação oficial do django](https://docs.djangoproject.com/pt-br/5.0/)
+* [Documentação oficial do Django](https://docs.djangoproject.com/pt-br/5.0/)
 * [Curso de Django da w3schools](https://www.w3schools.com/django/index.php)
