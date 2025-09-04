@@ -27,7 +27,7 @@
 
 O objetivo deste tutorial é apresentar uma visão geral do framework Python Django em que as principais funcionalidades do Django são apresentadas. Esse projeto será utilizado na disciplina GAC116 - Programação Web da Universidade Federal de Lavras (UFLA).
 
-Este tutorial foi elaborado baseado no tutorial disponível no [curso de Django da W3Schools](https://www.w3schools.com/django/index.php) e também baseado na [documentação oficial do Django](https://docs.djangoproject.com/pt-br/5.0/).
+Este tutorial foi elaborado com base no tutorial disponível no [curso de Django da W3Schools](https://www.w3schools.com/django/index.php) e na [documentação oficial do Django](https://docs.djangoproject.com/pt-br/5.0/).
 
 A aula está organizada no formato de tutorial, permitindo que cada estudante replique em seu computador os conceitos e recursos apresentados. O código será desenvolvido gradualmente, de modo a evidenciar a evolução da solução e facilitar a compreensão de como as tecnologias Django, HTML e SQL se integram na construção de aplicações web.
 
@@ -169,7 +169,7 @@ O Django suporta o conceito de Mapeamento Objeto-Relacional (ORM). Através do O
 
 <a href="#índice"><img align="right" width="15" height="15" src="./docs/up-arrow.png" alt="Voltar para topo"></a>
 
-O objetivo desta aula é apresentar uma introdução ao framework Python Django e como o mesmo se relaciona com a página HTML e o modelo de dados ORM. Aprenderemos a configurar o Django, a criar uma view, um template, um modelo, a acessar o ambiente adminstrativo e como realizar o cadastro, leitura, atualização e exclusão (CRUD) de dados. O Django é utilizado no desenvolvimento de páginas web do lado do servidor, ou seja, é uma ferramenta backend e funciona segundo a arquitetura MVT.
+O objetivo desta aula é apresentar uma introdução ao framework Python Django e como o mesmo se relaciona com a página HTML e o modelo de dados ORM. Aprenderemos a configurar o Django, a criar uma view, um template, um modelo, a acessar o ambiente administrativo e como realizar o cadastro, leitura, atualização e exclusão (CRUD) de dados. O Django é utilizado no desenvolvimento de páginas web do lado do servidor, ou seja, é uma ferramenta backend e funciona segundo a arquitetura MVT.
 
 ## Desenvolvimento do Projeto
 
@@ -302,7 +302,7 @@ python3 manage.py runserver
 
 **Explicação:** o comando acima é usado no Django para iniciar um servidor de desenvolvimento local. Ele é uma parte fundamental do processo de desenvolvimento web com o Django, pois permite que você execute e teste sua aplicação web em um ambiente de desenvolvimento local antes de implantá-la em um servidor web de produção. Ele inicia um servidor HTTP embutido no Django que pode lidar com solicitações HTTP. Por padrão, o servidor de desenvolvimento escuta na porta 8000, mas você pode especificar uma porta diferente como argumento opcional, por exemplo, `python3 manage.py runserver 8081`.
 
-Acesse no navegdor a página [http://127.0.0.1:8000/](http://127.0.0.1:8000/). A página padrão do Django deverá ser exibida (semelhante a imagem abaixo).
+Acesse no navegador a página [http://127.0.0.1:8000/](http://127.0.0.1:8000/). A página padrão do Django deverá ser exibida (semelhante a imagem abaixo).
 
 ![Tela Padrão Django](./docs/tela-django-inicial.png)
 
@@ -550,7 +550,7 @@ Crie o arquivo `myapp/templates/testeparametros.html` com o conteúdo:
 
 O template Django pode renderizar variáveis ​​colocando-as entre chaves `{{ }}`. Para executar comandos como **if** e **for** precisamos colocá-los entre chaves `{% %}`. A sintaxe para isso é semelhante a da linguagem Python.
 
-Edite o arquivo `myapp/views.py` e coloque o conteúdo ao final:
+Edite o arquivo `myapp/views.py` e adicione o conteúdo ao final:
 
 ```python
 ...
@@ -586,7 +586,7 @@ Acesse: [http://127.0.0.1:8000/testeparametros/](http://127.0.0.1:8000/testepara
 
 ### Atividade 3 - Passar Novos Parâmetros
 
-Altere o método `testeparametros` no arquivo `views.py` para passar dois novos parâmetros para o tamplate. Dessa maneira, é necessário alterar também o arquivo `testeparametros.html` para receber os dados passados e imprimi-los na tela. Em seguida, faça testes para verificar se tudo funcionou corretamente.
+Altere o método `testeparametros` no arquivo `views.py` para passar dois novos parâmetros para o template. Dessa maneira, é necessário alterar também o arquivo `testeparametros.html` para receber os dados passados e imprimi-los na tela. Em seguida, faça testes para verificar se tudo funcionou corretamente.
 
 ### Criar o Primeiro Modelo
 
@@ -769,7 +769,7 @@ O software [DB Browser for SQLite](https://sqlitebrowser.org/) oferece uma forma
 
 ### Atividade 5 - Crie um Novo Modelo
 
-Crie um novo modelo (tabela) em sua aplicação e registre-o no Admin. Acesse o ambiente administrativo e inclua de dados no modelo criado.
+Crie um novo modelo (tabela) em sua aplicação e registre-o no Admin. Acesse o ambiente administrativo e inclua dados no modelo criado.
 
 **Observação:** após a criação do novo modelo será necessário executar os comandos abaixo:
 
@@ -825,7 +825,7 @@ Ajuste a visualização das colunas de dados para os outros modelos criados em s
 
 ### Melhorar Nomeação de Campos do Modelo
 
-Os nomes das colunas exibidos na interface administrativa estão pouco intuitivas, pois foram capturadas automaticamente pelo Django. O correto é nomear adequadamente cada uma das colunas.
+Os nomes das colunas exibidos na interface administrativa estão pouco intuitivos, pois foram capturadas automaticamente pelo Django. O correto é nomear adequadamente cada uma das colunas.
 
 Para isso, edite o arquivo `myapp/models.py` e digite o conteúdo:
 
@@ -902,6 +902,26 @@ Execute o comando migrate:
 ```bash
 python3 manage.py migrate
 ```
+
+### Momento para Reflexão
+
+* Por que usar um framework em vez de programar tudo "na mão" em Python?
+
+* Qual camada vocês acham que dá mais trabalho para desenvolver: apresentação, negócios ou dados? Por quê?
+
+* Se um site fosse construído sem separar as camadas, quais problemas poderiam surgir?
+
+* Qual papel vocês acham mais crítico: Model, View ou Template?
+
+* Quais vantagens vocês veem em usar o ORM em vez de escrever SQL direto?
+
+* Que vantagens vocês percebem em já ter uma interface administrativa pronta?
+
+* Vocês acham que o Admin substitui um sistema feito sob medida? Por quê?
+
+* Em um projeto real, que tipo de aplicação vocês acham que poderia ser desenvolvida com Django?
+
+* Se tivessem que convencer uma empresa a adotar Django, quais seriam os principais argumentos?
 
 ## Créditos e Referências
 
