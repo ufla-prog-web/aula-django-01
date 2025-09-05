@@ -273,7 +273,7 @@ ou
 python3 -m django --version
 ```
 
-**Observação:** caso o terminal não encontre o django-admin, execute o seguinte comando (utilizado geralmente quando não se utiliza o venv no laboratório DCC07):
+**Observação:** caso o terminal não encontre o django-admin, execute o seguinte comando (utilizado geralmente quando não se utiliza o venv):
 
 ```bash
 export PATH=$PATH:~/.local/bin
@@ -443,7 +443,7 @@ Utilizando o exemplo anterior como base, crie uma nova view e uma nova rota para
 
 Crie uma pasta `templates` dentro da pasta `myapp` e crie um arquivo HTML chamado `paginateste.html`.
 
-Abra o arquivo `myapp/templates/myapp/paginateste.html` e insira o conteúdo:
+Abra o arquivo `myapp/templates/paginateste.html` e insira o conteúdo:
 
 ```html
 <!DOCTYPE html>
@@ -501,7 +501,7 @@ Inicie o servidor de desenvolvimento:
 python3 manage.py runserver
 ```
 
-Acesse: [http://127.0.0.1:8000/teste/](http://127.0.0.1:8000/teste/`). A página criada deverá ser exibida.
+Acesse: [http://127.0.0.1:8000/teste/](http://127.0.0.1:8000/teste/). A página criada deverá ser exibida.
 
 ### Atividade 2 - Crie uma Nova Página
 
@@ -582,7 +582,7 @@ urlpatterns = [
 ]
 ```
 
-Acesse: [http://127.0.0.1:8000/testeparametros/](http://127.0.0.1:8000/testeparametros/`) e verifique a renderização dos valores.
+Acesse: [http://127.0.0.1:8000/testeparametros/](http://127.0.0.1:8000/testeparametros/) e verifique a renderização dos valores.
 
 ### Atividade 3 - Passar Novos Parâmetros
 
@@ -669,7 +669,7 @@ Para entrar na interface do usuário administrativo, inicie o servidor:
 python3 manage.py runserver
 ```
 
-Acesse: [127.0.0.1:8000/admin/](127.0.0.1:8000/admin/)
+Acesse: [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/) e perceba que o Django possui uma tela de login para o ambiente administrativo pronta.
 
 A razão pela qual esta URL vai para a página de login do administrador do Django pode ser encontrada no arquivo `mysite/urls.py`:
 
@@ -718,7 +718,7 @@ Reinicie o servidor:
 python3 manage.py runserver
 ```
 
-Acesse: [127.0.0.1:8000/admin/](127.0.0.1:8000/admin/). Preencha o formulário com o nome de usuário e senha.
+Acesse: [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/). Preencha o formulário com o nome de usuário e senha.
 
 Na tela aberta você pode Criar, Ler, Atualizar e Excluir grupos e usuários, mas onde está o modelo de Livro?
 
@@ -745,7 +745,7 @@ from .models import Livro
 admin.site.register(Livro)
 ```
 
-Acesse: [127.0.0.1:8000/admin/](127.0.0.1:8000/admin/) e analise o resultado.
+Acesse: [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/) e analise o resultado.
 
 ### Atividade 4 - Cadastro de Livros
 
@@ -802,7 +802,7 @@ class Livro(models.Model):
 ...
 ```
 
-Acesse: [127.0.0.1:8000/admin/](127.0.0.1:8000/admin/) na tela de Livros e analise o resultado.
+Acesse: [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/) vá na tela de Livros e analise o resultado.
 
 Para alterar utilizando a segunda forma (RECOMENDADA), devemos definir a propriedade `list_display` do arquivo `myapp/admin.py`. Primeiro, crie uma classe `LivroAdmin()` e especifique a tupla `list_display`, conforme abaixo:
 
@@ -817,7 +817,7 @@ admin.site.register(Livro, LivroAdmin)      # classe adicionada
 ...
 ```
 
-Acesse: [127.0.0.1:8000/admin/](127.0.0.1:8000/admin/) na tela de Livros e analise o resultado.
+Acesse: [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/) vá na tela de Livros e analise o resultado.
 
 ### Atividade 6 - Ajuste a Visualização para Outros Modelos
 
