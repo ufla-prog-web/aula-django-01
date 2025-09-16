@@ -433,7 +433,7 @@ python3 manage.py runserver
 
 * Acesse [http://127.0.0.1:8000](http://127.0.0.1:8000). A página exibirá **Page not found (404)**, pois não há rota para `/`.
 * Acesse [http://127.0.0.1:8000/teste/](http://127.0.0.1:8000/teste/). A mensagem **"Olá, mundo!"** deverá ser exibida.
-* Para encerrar o servidor: Ctrl+C.
+* Para encerrar o servidor: `Ctrl+C`.
 
 ### Atividade 1 - Crie uma Nova View e Nova Rota
 
@@ -468,9 +468,8 @@ from django.template import loader
 def teste(request):
     template = loader.get_template('paginateste.html')
     return HttpResponse(template.render())
-
+    
 ...
-
 ```
 
 Para poder trabalhar com coisas mais complicadas do que **"Olá Mundo!"**, temos que dizer ao Django que um novo aplicativo foi criado. Isso é feito no arquivo `mysite/settings.py`. Procure a lista `INSTALLED_APPS[]` e adicione o aplicativo `myapp` que foi criado. Veja o exemplo abaixo:
@@ -720,7 +719,7 @@ python3 manage.py runserver
 
 Acesse: [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/). Preencha o formulário com o nome de usuário e senha.
 
-Na tela aberta você pode Criar, Ler, Atualizar e Excluir grupos e usuários, mas onde está o modelo de Livro?
+Na tela aberta você pode Criar, Visualizar, Atualizar e Excluir grupos e usuários, mas onde está o modelo de Livro?
 
 O modelo Livro está faltando, como deveria estar. Você tem que informar ao Django quais modelos devem estar visíveis na interface administrativa.
 
@@ -810,7 +809,7 @@ Para alterar utilizando a segunda forma (RECOMENDADA), devemos definir a proprie
 from django.contrib import admin
 from .models import Livro
 
-class LivroAdmin(admin.ModelAdmin):         # função adicionada
+class LivroAdmin(admin.ModelAdmin):         # classe criada
     list_display = ("nome", "autor", "ano")
 
 admin.site.register(Livro, LivroAdmin)      # classe adicionada
