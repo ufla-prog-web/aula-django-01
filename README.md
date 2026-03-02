@@ -55,13 +55,20 @@ A seguir estão listados os principais recursos empregados no desenvolvimento de
 
 ### Ferramentas
 
-* Visual Studio Code - Ambiente de desenvolvimento integrado - [link](https://code.visualstudio.com/)
-* Git - Sistema de controle de versão - [link](https://git-scm.com/)
-* Github - Plataforma de hospedagem e colaboração em projetos de software - [link](https://github.com/)
-* Pip - Gerenciador de pacotes do Python - [link](https://pypi.org/project/pip/)
-* Venv - Ambiente virtual do Python - [link](https://docs.python.org/pt-br/3/library/venv.html)
-* SQLite Online - SGBD - [link](https://sqliteonline.com/)
-* DB Browser for SQLite - SGBD - [link](https://sqlitebrowser.org/)
+* Visual Studio Code - Ambiente de Desenvolvimento Integrado
+  * [Link site Visual Studio](https://code.visualstudio.com/)
+* Git - Sistema de controle de versão
+  * [Link site do Git](https://git-scm.com/)
+* Github - Plataforma de hospedagem e colaboração em projetos de software
+  * [Link site do Github](https://github.com/)
+* Pip - Gerenciador de pacotes do Python
+  * [Link site do Pip](https://pypi.org/project/pip/)
+* Venv - Ambiente virtual do Python
+  * [Link site do Venv](https://docs.python.org/pt-br/3/library/venv.html)
+* SQLite Online - SGBD
+  * [Link site SQLite Online](https://sqliteonline.com/)
+* DB Browser for SQLite - SGBD
+  * [Link site SQLite Browser](https://sqlitebrowser.org/)
 
 ## Fundamentos Teóricos
 
@@ -123,7 +130,9 @@ A arquitetura web de três camadas é um padrão de design de software que organ
 
 Essa separação facilita a manutenção e escalabilidade da aplicação, permitindo que cada camada possa ser modificada ou melhorada de forma independente.
 
-![Arquitetura das Aplicações Web](./docs/arquitetura-web.png)
+![Arquitetura das Aplicações Web](./docs/arquitetura-web2.png)
+
+Fonte: Baseada em [https://blog.grancursosonline.com.br/arquitetura-em-tres-camadas-para-aplicacoes-web/](https://blog.grancursosonline.com.br/arquitetura-em-tres-camadas-para-aplicacoes-web/)
 
 ### Arquitetura MVT do Django
 
@@ -221,12 +230,14 @@ Abra o Visual Studio Code (VS Code) na pasta `aula-django-01`.
 
 **Dica:** abra um terminal utilizando a IDE clicando em `Terminal` e `New Terminal`.
 
-### Navegar até a Pasta do Projeto
+### Criar a Pasta do Projeto
 
-No terminal do VS Code, acesse a pasta do projeto `aula-django-01`:
+Em seguida, crie, dentro da pasta `aula-django-01`, a pasta do projeto denominada `code`:
 
 ```bash
-cd aula-django-01
+cd aula-django-01/
+mkdir code
+cd code/
 ```
 
 ### Criar o Ambiente Virtual
@@ -281,12 +292,9 @@ export PATH=$PATH:~/.local/bin
 
 ### Criar o Projeto no Django
 
-Crie uma pasta chamada `code` dentro do projeto `aula-django-01`:
-
 Crie um projeto em Django utilizando o comando abaixo:
 
 ```bash
-cd code
 django-admin startproject mysite .
 ```
 
@@ -308,7 +316,7 @@ Acesse no navegador a página [http://127.0.0.1:8000/](http://127.0.0.1:8000/). 
 
 ### Criar um Aplicativo
 
-Crie um aplicativo (app) chamado `myapp` dentro do projeto:
+Crie um aplicativo (app) chamado `myapp` dentro do projeto (atenção: tem que parar o `runserver` ou executar em outro terminal):
 
 ```bash
 django-admin startapp myapp
