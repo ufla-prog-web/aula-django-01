@@ -19,7 +19,7 @@
 * [Fundamentos Teóricos](#fundamentos-teóricos)
 * [Objetivo da Aula](#objetivo-da-aula)
 * [Desenvolvimento do Projeto](#desenvolvimento-do-projeto)
-* [Créditos e Referências](#créditos-e-referências)
+* [Referências e Materiais de Apoio](#referências-e-materiais-de-apoio)
 
 ## Introdução
 
@@ -88,7 +88,7 @@ A seguir estão destacados alguns dos principais fundamentos teóricos para ente
 
 **5. Segurança embutida:** O Django se preocupa com a segurança, oferecendo proteção contra ataques comuns como SQL *Injection*, *Cross-site Scripting* (XSS), *Cross-site Request Forgery* (CSRF), e *Clickjacking*.
 
-**6. Escalabilidade:** Django é altamente escalável, podendo lidar com grandes volumes de tráfego, como em sites populares que utilizam o framework (por exemplo, Instagram e Pinterest).
+**6. Escalabilidade:** Django é altamente escalável, podendo lidar com grandes volumes de tráfego, como em sites populares que utilizam o framework (por exemplo, Instagram, Pinterest, Spotify, Coursera e Dropbox).
 
 **7. Comunidade ativa e documentação:** Django conta com uma ampla comunidade de desenvolvedores e uma documentação completa e detalhada, facilitando a resolução de problemas e o aprendizado.
 
@@ -162,17 +162,16 @@ No modelo MVT do Django, as requisições seguem um fluxo bem definido, onde cad
 
 * **Resposta (HTTP Response)**: Depois que o Template é renderizado, a View retorna uma resposta HTTP (normalmente uma página HTML ou dados JSON em APIs) ao navegador ou cliente. Essa resposta contém o conteúdo processado e visualizado pelo usuário.
 
-A figura abaixo detalha o fluxo descrito acima.
-
-![Arquitetura MVT - Requisição](./docs/mvt-2.png)
-
-A figura abaixo detalha ainda mais a arquitetura MVT e as tecnologias envolvidas.
+A figura abaixo detalha o fluxo de comunicação, a arquitetura MVT e as tecnologias envolvidas.
 
 ![Arquitetura MVT - Detalhes](./docs/mvt-3.png)
 
 ### Modelo ORM
 
 O Django suporta o conceito de Mapeamento Objeto-Relacional (ORM). Através do ORM você define a modelagem de dados através de classes em Python. Com isso é possível gerar suas tabelas no banco de dados e manipulá-las sem necessidade de utilizar SQL (o que também é possível). Os registros de cada tabela são representados como instâncias das classes correspondentes.
+
+![Arquitetura MVT - Detalhes](./docs/orm.png)
+Fonte: [https://www.linkedin.com/pulse/exploring-django-orm-anas-al-hakim/](https://www.linkedin.com/pulse/exploring-django-orm-anas-al-hakim/)
 
 ## Objetivo da Aula
 
@@ -258,15 +257,9 @@ Ative o ambiente virtual no seu computador utilizando o comando:
 source venv/bin/activate
 ```
 
-Para sair do ambiente virtual:
-
-```bash
-deactivate
-```
-
 ### Instalar o Django
 
-Instale o Django dentro do ambiente virtual criado (testado na versão 5.0):
+Instale o Django dentro do ambiente virtual criado (testado na versão 5.0 até a 6.1):
 
 ```bash
 python3 -m pip install django
@@ -295,10 +288,10 @@ export PATH=$PATH:~/.local/bin
 Crie um projeto em Django utilizando o comando abaixo:
 
 ```bash
-django-admin startproject mysite .
+django-admin startproject projeto_django .
 ```
 
-**Observação:** o ponto no comando acima informa ao Django para não criar uma pasta com nome `mysite` dentro de uma outra pasta `mysite`. Isso evita ter que ficar navegando entre pastas.
+**Observação:** o ponto no comando acima informa ao Django para não criar uma pasta com nome `projeto_django` dentro de uma outra pasta `projeto_django`. Isso evita ter que ficar navegando entre pastas.
 
 ### Executar o Projeto
 
@@ -338,17 +331,17 @@ python3 manage.py startapp myapp
 
 * **Arquivos Estáticos (opcional):** Como CSS, JavaScript e imagens, que são usados para estilizar e adicionar interatividade às páginas da web.
 
-* **URLs:** Mapeiam as URLs do site para as views correspondentes. Cada aplicação geralmente tem seu próprio arquivo urls.py para definir os padrões de URL específicos dessa aplicação.
+* **URLs:** Mapeiam as URLs do site para as views correspondentes. Cada aplicação geralmente tem seu próprio arquivo `urls.py` para definir os padrões de URL específicos dessa aplicação.
 
 ### Conhecer a Estrutura de Diretórios do Django
 
 A estrutura de diretórios de um projeto Django é organizada de maneira a separar os diferentes componentes da aplicação, facilitando o desenvolvimento e a manutenção. A seguir, temos a estrutura geral de diretórios de um projeto feito em Django.
 
 ```text
-mysite/
+projeto_django/
 │
 ├── manage.py
-├── mysite/
+├── projeto_django/
 │   ├── __init__.py
 │   ├── asgi.py
 │   ├── settings.py
@@ -378,7 +371,7 @@ mysite/
 ```
 
 * **manage.py**: Um script que permite interagir com o projeto Django a partir da linha de comando. Ele é usado para executar comandos como iniciar o servidor, migrar o banco de dados e criar superusuários.
-* **mysite/**: Esta pasta contém os arquivos de configuração e o núcleo do projeto Django. Normalmente, o nome da pasta do projeto coincide com o nome do projeto. Aqui estão os arquivos comuns:
+* **projeto_django/**: Esta pasta contém os arquivos de configuração e o núcleo do projeto Django. Normalmente, o nome da pasta do projeto coincide com o nome do projeto. Aqui estão os arquivos comuns:
   * **__init__.py**: Indica ao Python que essa pasta deve ser tratada como um pacote.
   * **asgi.py**: Ponto de entrada para servidores ASGI (usado para rodar a aplicação em modo assíncrono).
   * **settings.py**: Arquivo de configuração onde você define parâmetros como a conexão com o banco de dados, apps instalados, middleware, etc.
@@ -404,7 +397,7 @@ Edite o arquivo de `myapp/views.py` e coloque o conteúdo:
 from django.shortcuts import render
 from django.http import HttpResponse
 
-def teste(request):
+def principal(request):
     return HttpResponse("Olá Mundo!")
 ```
 
@@ -415,13 +408,13 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('teste/', views.teste, name='teste'),
+    path('principal/', views.principal, name='principal'),
 ]
 ```
 
-Essa configuração registra a rota `/teste/` que chama `views.teste`. Assim, quando o usuário acessar a rota ou URL [http://127.0.0.1:8000/teste/](http://127.0.0.1:8000/teste/), o método `views.teste` será executado.
+Essa configuração registra a rota `/principal/` que chama `views.principal`. Assim, quando o usuário acessar a rota ou URL [http://127.0.0.1:8000/principal/](http://127.0.0.1:8000/principal/), o método `views.principal` será executado.
 
-Abra o arquivo chamado `urls.py` da pasta `mysite` e inclua as rotas do app, como abaixo:
+Abra o arquivo chamado `urls.py` da pasta `projeto_django` e inclua as rotas do app, como abaixo:
 
 ```python
 from django.contrib import admin
@@ -440,7 +433,7 @@ python3 manage.py runserver
 ```
 
 * Acesse [http://127.0.0.1:8000](http://127.0.0.1:8000). A página exibirá **Page not found (404)**, pois não há rota para `/`.
-* Acesse [http://127.0.0.1:8000/teste/](http://127.0.0.1:8000/teste/). A mensagem **"Olá, mundo!"** deverá ser exibida.
+* Acesse [http://127.0.0.1:8000/principal/](http://127.0.0.1:8000/principal/). A mensagem **"Olá, mundo!"** deverá ser exibida.
 * Para encerrar o servidor: `Ctrl+C`.
 
 ### Atividade 1 - Crie uma Nova View e Nova Rota
@@ -449,38 +442,79 @@ Utilizando o exemplo anterior como base, crie uma nova view e uma nova rota para
 
 ### Criar o Primeiro Template
 
-Crie uma pasta `templates` dentro da pasta `myapp` e crie um arquivo HTML chamado `paginateste.html`.
+Crie uma pasta `templates` dentro da pasta `myapp` e crie um arquivo HTML chamado `principal.html`. **Atenção:** o nome da pasta tem que ser exatamente `templates`, o Django buscará por essa pasta.
 
-Abra o arquivo `myapp/templates/paginateste.html` e insira o conteúdo:
+Abra o arquivo `myapp/templates/principal.html` e insira o conteúdo:
 
 ```html
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Aplicação Django</title>
-  </head>
-  <body>
-    <h1>Olá Mundo!</h1>
-    <p>Bem-vindo ao meu primeiro projeto Django!</p>
-  </body>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+</head>
+<body>
+    <header>
+        <h1>Programação Web</h1>
+        <nav>
+            <a href="#">Início</a> |
+            <a href="#">Sobre</a> |
+            <a href="#">Aulas</a> |
+            <a href="#">Atividades</a> |
+            <a href="#">Contato</a>
+        </nav>
+    </header>
+    <hr>
+    <main>
+        <section>
+            <h2>Sobre a Disciplina</h2>
+            <p>
+                A disciplina de Programação Web tem como objetivo apresentar
+                os principais conceitos e tecnologias utilizados no
+                desenvolvimento de aplicações para a Web.
+            </p>
+            <p>
+                Durante a disciplina, os estudantes terão contato com
+                tecnologias de front-end e back-end, além de conceitos
+                relacionados à arquitetura de aplicações web.
+            </p>
+        </section>
+        <section>
+            <h2>Objetivos</h2>
+            <ul>
+                <li>Compreender o funcionamento da Web.</li>
+                <li>Desenvolver páginas utilizando HTML.</li>
+                <li>Aplicar estilos utilizando CSS.</li>
+                <li>Adicionar interatividade utilizando JavaScript.</li>
+                <li>Conhecer frameworks para desenvolvimento web.</li>
+                <li>Desenvolver aplicações web com integração ao back-end.</li>
+            </ul>
+        </section>
+    </main>
+    <hr>
+    <footer>
+        <p>Disciplina de Programação Web - UFLA</p>
+        <p>2026</p>
+    </footer>
+</body>
 </html>
 ```
 
-Agora, é necessário modificar a visualização. Abra o arquivo `views.py` e substitua o método de visualização `teste` por este:
+Agora, é necessário modificar a visualização. Abra o arquivo `views.py` e substitua o método de visualização `principal` por este:
 
 ```python
 from django.http import HttpResponse
 from django.template import loader
 
-def teste(request):
-    template = loader.get_template('paginateste.html')
+def principal(request):
+    template = loader.get_template('principal.html')
     return HttpResponse(template.render())
     
 ...
 ```
 
-Para poder trabalhar com coisas mais complicadas do que **"Olá Mundo!"**, temos que dizer ao Django que um novo aplicativo foi criado. Isso é feito no arquivo `mysite/settings.py`. Procure a lista `INSTALLED_APPS[]` e adicione o aplicativo `myapp` que foi criado. Veja o exemplo abaixo:
+Para poder trabalhar com coisas mais complicadas do que **"Olá Mundo!"**, temos que dizer ao Django que um novo aplicativo foi criado. Isso é feito no arquivo `projeto_django/settings.py`. Procure a lista `INSTALLED_APPS[]` e adicione o aplicativo `myapp` que foi criado. Veja o exemplo abaixo:
 
 ```python
 INSTALLED_APPS = [
@@ -508,7 +542,7 @@ Inicie o servidor de desenvolvimento:
 python3 manage.py runserver
 ```
 
-Acesse: [http://127.0.0.1:8000/teste/](http://127.0.0.1:8000/teste/). A página criada deverá ser exibida.
+Acesse: [http://127.0.0.1:8000/principal/](http://127.0.0.1:8000/principal/). A página criada deverá ser exibida.
 
 ### Atividade 2 - Crie uma Nova Página
 
@@ -518,40 +552,43 @@ Utilizando o exemplo anterior como base, crie uma nova página HTML e atualize a
 
 Agora, iremos passar parâmetros do Python para o template HTML utilizando tags do Django. Por padrão, o Django utiliza a *Django Template Language* (DTL) que é uma forma de templates similar a biblioteca [Jinja](https://jinja.palletsprojects.com/en/3.1.x/). Com essa linguagem de templates é possível executar lógica de programação, como executar instruções condicional (**if** ) e repetição (**for**).
 
-Crie o arquivo `myapp/templates/testeparametros.html` com o conteúdo:
+Crie o arquivo `myapp/templates/disciplina.html` com o conteúdo:
 
 ```html
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
-    <title>Aplicação Django</title>
-  </head>
-  <body>
-    <h1>Tags de Templates do Django</h1>
-    <p>Exemplo com tags para variáveis:</p>
-    <ul>
-        <li><b>Nome:</b> {{ nome }} </li>
-        <li><b>Idade:</b> {{ idade }} </li>
-        <li><b>E-mail:</b> {{ email }} </li>
-        <li><b>Telefone:</b> {{ telefone }} </li>
-        <li><b>Usuário Ativo:</b> {{ usuarioativo }} </li>
-    </ul>
-    <p>Exemplo com tags para condicional:</p>
-    {% if condicional == 1 %}
-        <b>Programação</b>
-    {% elif condicional == 2 %}
-        <b>Web</b>
+    <title>{{ disciplina.nome }}</title>
+</head>
+<body>
+    <h1>{{ universidade }}</h1>
+    <h2>{{ disciplina.nome }}</h2>
+    <p>
+        <b>Código:</b> {{ disciplina.codigo }}
+    </p>
+    <p>
+        <b>Carga horária:</b> {{ disciplina.carga_horaria }} horas
+    </p>
+    <p>
+        <b>Local:</b> {{ disciplina.local }}
+    </p>
+    <h2>Avisos</h2>
+    {% if tem_aviso_importante %}
+        <p><b>Atenção! Tem entrega para a próxima aula.</b></p>
     {% else %}
-        <b>UFLA</b>
-    {% endif %}
-    <p>Exemplo com tags para repetição:</p>
+        <p><b>Não há avisos importantes.</b></p>
+    {% endif %}   
+    <h2>Materiais</h2>
     <ul>
-        {% for x in numeros %}
-            <li>{{ x }}</li>
+        {% for material in materiais %}
+            <li>
+                <b>{{ material.titulo }}</b>
+                - {{ material.tipo }}
+            </li>
         {% endfor %}
     </ul>
-  </body>
+</body>
 </html>
 ```
 
@@ -562,18 +599,35 @@ Edite o arquivo `myapp/views.py` e adicione o conteúdo ao final:
 ```python
 ...
 
-def testeparametros(request):
+def disciplina(request):
     context = {
-        "nome": "José Silva",
-        "idade": 30,
-        "email": "jose.silva@email.com",
-        "telefone": "3333-1234",
-        "usuarioativo": True,
-        "condicional": 3,
-        'numeros': [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+        "universidade": "Universidade Federal de Lavras",
+        "disciplina": {
+            "nome": "Programação Web",
+            "codigo": "GAC116",
+            "carga_horaria": 68,
+            "local": "Sala 101",
+        },
+        "tem_aviso_importante": False,
+        "materiais": [
+            {
+                "titulo": "Introdução ao Django",
+                "tipo": "Slides"
+            },
+            {
+                "titulo": "Templates no Django",
+                "tipo": "Tutorial"
+            },
+            {
+                "titulo": "Exercícios de Templates",
+                "tipo": "Lista de exercícios"
+            },
+        ]
     }
-    template = loader.get_template('testeparametros.html')
-    return HttpResponse(template.render(context, request))
+    template = loader.get_template("disciplina.html")
+    return HttpResponse(
+        template.render(context, request)
+    )
 ```
 
 O código acima criou um dicionário chamado `context` em que diversas chaves e valores foram definidas. Esses dados foram passados para o código HTML através da função `template.render()`. Em seguida, o template (HTML) pega os dados para exibi-los. Nesse exemplo, os dados vieram de um dicionário do Python, no futuro poderão vir de um Banco de Dados.
@@ -585,15 +639,15 @@ Edite o arquivo `myapp/urls.py` e adicione a linha abaixo:
 
 urlpatterns = [
     ...
-    path('testeparametros/', views.testeparametros, name='testeparametros') # linha adicionada
+    path('disciplina/', views.disciplina, name='disciplina') # linha adicionada
 ]
 ```
 
-Acesse: [http://127.0.0.1:8000/testeparametros/](http://127.0.0.1:8000/testeparametros/) e verifique a renderização dos valores.
+Acesse: [http://127.0.0.1:8000/disciplina/](http://127.0.0.1:8000/disciplina/) e verifique a renderização dos valores.
 
 ### Atividade 3 - Passar Novos Parâmetros
 
-Altere o método `testeparametros` no arquivo `views.py` para passar dois novos parâmetros para o template. Dessa maneira, é necessário alterar também o arquivo `testeparametros.html` para receber os dados passados e imprimi-los na tela. Em seguida, faça testes para verificar se tudo funcionou corretamente.
+Altere o método `disciplina` no arquivo `views.py` para passar dois novos parâmetros para o template. Dessa maneira, é necessário alterar também o arquivo `disciplina.html` para receber os dados passados e imprimi-los na tela. Em seguida, faça testes para verificar se tudo funcionou corretamente.
 
 ### Criar o Primeiro Modelo
 
@@ -735,15 +789,7 @@ O modelo Livro está faltando, como deveria estar. Você tem que informar ao Dja
 
 Para incluir o modelo Livro na interface administrativa, temos que dizer ao Django que este modelo deve estar visível na interface administrativa. Isso é feito em um arquivo chamado `admin.py` que está localizado na pasta do seu aplicativo.
 
-Abra o arquivo `myapp/admin.py`:
-
-```python
-from django.contrib import admin
-
-# Register your models here.
-```
-
-Insira as linhas abaixo para tornar o modelo Livro visível na página de administração:
+Abra o arquivo `myapp/admin.py` e insira as linhas abaixo para tornar o modelo Livro visível na página de administração:
 
 ```python
 from django.contrib import admin
@@ -773,6 +819,8 @@ SELECT * FROM myapp_livro;
 O software [DB Browser for SQLite](https://sqlitebrowser.org/) oferece uma forma simples e prática de visualizar dados, mas precisa de instalação adicional. Utilize essa ferramenta para abrir o arquivo do BD chamado `db.sqlite3`. Para ver os dados de uma tabela você pode ir na aba `Navegar dados` ou então `Executar SQL` e executar a SQL acima.
 
 **Observação:** repare que o nome físico da tabela segue o padrão `<app>_<modelo>`, por exemplo `myapp_livro`.
+
+**Dica:** Se desejar você pode utilizar ferramentas mais robustas como o DBeaver para acessar o modelo de dados.
 
 ### Atividade 5 - Crie um Novo Modelo
 
@@ -850,6 +898,8 @@ class Livro(models.Model):
 
 No código acima foi incluído mais um parâmetro nos campos da tabela. O campo `nome` passou a ser chamado de "Título" ao ser exibido na interface administrativa. Por sua vez, o campo `ano` virou "Ano de publicação".
 
+Acesse: [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/) vá na tela de Livros e analise o resultado.
+
 ### Atividade 7 - Ajuste os Nomes de Outros Modelos
 
 Ajuste os nomes dos campos para os outros modelos criados em sua aplicação. Acesse o ambiente administrativo para visualizar os ajustes realizados.
@@ -910,6 +960,8 @@ Execute o comando migrate:
 python3 manage.py migrate
 ```
 
+Acesse: [http://127.0.0.1:8000/admin/](http://127.0.0.1:8000/admin/) vá na tela de Livros e analise o resultado.
+
 ### Momento para Reflexão
 
 * Por que usar um framework em vez de programar tudo "na mão" em Python?
@@ -930,11 +982,11 @@ python3 manage.py migrate
 
 * Se tivessem que convencer uma empresa a adotar Django, quais seriam os principais argumentos?
 
-## Créditos e Referências
+## Referências e Materiais de Apoio
 
 <a href="#índice"><img align="right" width="15" height="15" src="./docs/up-arrow.png" alt="Voltar para topo"></a>
 
-Este tutorial foi inspirado nos seguintes materiais:
+Este tutorial foi baseado nos seguintes materiais:
 
 * [Documentação oficial do Django](https://docs.djangoproject.com/pt-br/5.0/)
 * [Curso de Django da w3schools](https://www.w3schools.com/django/index.php)
