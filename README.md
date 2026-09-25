@@ -343,39 +343,40 @@ python3 manage.py startapp myapp
 A estrutura de diretórios de um projeto Django é organizada de maneira a separar os diferentes componentes da aplicação, facilitando o desenvolvimento e a manutenção. A seguir, temos a estrutura geral de diretórios de um projeto feito em Django.
 
 ```text
-projeto_django/
+🗂️ projeto_django/
 │
-├── manage.py
-├── projeto_django/
-│   ├── __init__.py
-│   ├── asgi.py
-│   ├── settings.py
-│   ├── urls.py
-│   └── wsgi.py
-├── myapp1/
-│   ├── migrations/
-│   ├── templates/
-│   ├── __init__.py
-│   ├── admin.py
-│   ├── apps.py
-│   ├── models.py
-│   ├── views.py
-│   ├── urls.py
-│   └── tests.py
-├── myapp2/
-│   ├── migrations/
-│   ├── templates/
-│   ├── __init__.py
-│   ├── admin.py
-│   ├── apps.py
-│   ├── models.py
-│   ├── views.py
-│   ├── urls.py
-│   └── tests.py
-└── static/
+├── 📄 manage.py
+├── 📄 db.sqlite3
+├── 📂 projeto_django/
+│   ├── 📄 __init__.py
+│   ├── 📄 asgi.py
+│   ├── 📄 settings.py
+│   ├── 📄 urls.py
+│   └── 📄 wsgi.py
+├── 📂 myapp1/
+│   ├── 📂 migrations/
+│   ├── 📂 templates/
+│   ├── 📄 __init__.py
+│   ├── 📄 admin.py
+│   ├── 📄 apps.py
+│   ├── 📄 models.py
+│   ├── 📄 views.py
+│   ├── 📄 urls.py
+│   └── 📄 tests.py
+└── 📂 myapp2/
+    ├── 📂 migrations/
+    ├── 📂 templates/
+    ├── 📄 __init__.py
+    ├── 📄 admin.py
+    ├── 📄 apps.py
+    ├── 📄 models.py
+    ├── 📄 views.py
+    ├── 📄 urls.py
+    └── 📄 tests.py
 ```
 
 * **manage.py**: Um script que permite interagir com o projeto Django a partir da linha de comando. Ele é usado para executar comandos como iniciar o servidor, migrar o banco de dados e criar superusuários.
+* **db.sqlite3**: Banco de dados SQLite usado para durante a etapa de desenvolvimento.
 * **projeto_django/**: Esta pasta contém os arquivos de configuração e o núcleo do projeto Django. Normalmente, o nome da pasta do projeto coincide com o nome do projeto. Aqui estão os arquivos comuns:
   * **__init__.py**: Indica ao Python que essa pasta deve ser tratada como um pacote.
   * **asgi.py**: Ponto de entrada para servidores ASGI (usado para rodar a aplicação em modo assíncrono).
@@ -392,7 +393,6 @@ projeto_django/
   * **views.py**: Contém as funções ou classes que processam as requisições e retornam as respostas.
   * **urls.py**: Define as rotas específicas para as views deste app.
   * **tests.py**: Contém testes automatizados para a aplicação.
-* **static/**: Essa pasta contém arquivos estáticos, como CSS, JavaScript e imagens. Os arquivos dentro de `static/` são usados para a apresentação visual da aplicação.
 
 ### Criar a Primeira View
 
